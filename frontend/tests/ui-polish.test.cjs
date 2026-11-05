@@ -1,0 +1,41 @@
+const test = require('node:test');
+const assert = require('node:assert/strict');
+const React = require('react');
+const {renderToStaticMarkup} = require('react-dom/server');
+const {loadSource} = require('./load-source.cjs');
+const {SelectionPrice} = loadSource('components/SelectionPrice.tsx');
+const {OddsStatus} = loadSource('components/DataStatus.tsx');
+const render = (component, props) => renderToStaticMarkup(React.createElement(component, props));
+test('missing observation and missing sportsbook price explain estimate exclusion', t => {
+  const now = Date.parse('2026-10-23T17:00:00Z');
+  t.mock.method(Date,'now',()=>now);
+  const gameTime='2026-10-24T17:00:00Z';
+  const selection={actionable:true,availability:'available',odds:null,provider_observed_at:'2026-10-23T16:59:00Z',expires_at:gameTime};
+  let html=render(SelectionPrice,{selection,gameTime});
+  assert.match(html,/Excluded from estimates/);
+  assert.match(html,/No sportsbook price is available/);
+  assert.doesNotMatch(html,/· Actionable/);
+  html=render(SelectionPrice,{selection:{...selection,odds:120,provider_observed_at:null},gameTime});
+  assert.match(html,/Latest observation: Unknown/);
+  assert.match(html,/Sportsbook observation time is unknown/);
+  assert.match(html,/No price was recorded when this selection was saved/);
+  assert.match(html,/Your original selection is kept/);
+});
+test('observation date is visible without hover and ingestion never replaces it', t => {
+  t.mock.method(Date,'now',()=>Date.parse('2026-10-23T17:00:00Z'));
+  const offer={provider_observed_at:'2026-10-22T16:00:00Z',ingested_at:'2026-10-23T16:59:00Z',availability:'expired'};
+  const html=render(OddsStatus,{offer});
+  assert.match(html,/Sportsbook observation: Oct 22, 2026/);
+  assert.doesNotMatch(html,/Sportsbook observation: Oct 23/);
+});
+test('failed slip hydration blocks mutations until recovery; selections are retained',()=>{
+  const {useSlip}=loadSource('store/slip.ts');
+  useSlip.getState().initialize([{id:'retained',side:'under',selection:{sportsbook:'Fixture',line:2.5}}]);
+  useSlip.getState().finishLoading();
+  useSlip.getState().setLoadError('Temporary outage');
+  assert.equal(useSlip.getState().beginMutation('retained'),false);
+  assert.equal(useSlip.getState().items[0].selection.line,2.5);
+  useSlip.getState().setLoadError(null);
+  assert.equal(useSlip.getState().beginMutation('retained'),true);
+  useSlip.getState().endMutation('retained');
+});

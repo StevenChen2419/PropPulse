@@ -1,0 +1,89 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+venv/
+.venv/
+env/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+*.pkl
+*.joblib
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Node
+node_modules/
+.next/
+out/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Docker volumes (local only)
+pgdata/
+redisdata/
+
+# VS Code
+.vscode/settings.json
+.vscode/launch.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# ML artifacts
+backend/ml/models/
+*.csv
+
+# Generated ingestion status
+backend/data/odds_ingestion_status.json
+backend/data/live_refresh_status.json
+backend/data/game_log_ingestion_status.json
+backend/data/fetch_odds.log
+backend/data/fetch_player_game_logs.log
+
+# Separately authorized, redacted ESPN contract collections (never fixtures)
+backend/data/espn_contract_audit/
+
+tsconfig.tsbuildinfo
+*.tsbuildinfo
+
+backend/data/odds_runs/
+
+# Browser test output
+frontend/test-results/
+frontend/playwright-report/
+frontend/blob-report/
+
+# Private environments, provider collections, approval receipts and demo captures
+.env.*
+!.env.example
+backend/data/**
+!backend/data/.gitkeep
+!backend/data/sports_player_mappings.example.json
+*.dump
+*.backup
+*.bak
+screenshots/
+recordings/
+
+# Public checkout: private credentials, exports, scans and local tooling
+*.db
+*.sqlite
+*.sqlite3
+*.sql.gz
+*.pem
+*.key
+*.p12
+*.pfx
+.gitleaks*.json
+.trivy*
+backend/odds_ingestion_status.json

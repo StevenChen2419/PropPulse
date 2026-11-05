@@ -1,0 +1,1047 @@
+[
+  {
+    "sport": "WNBA",
+    "role": "player",
+    "player_id": "11111111-1111-4111-8111-111111111111",
+    "season": "2025",
+    "summary": {
+      "status": "available",
+      "sport": "WNBA",
+      "season": "2025",
+      "competition": "Regular Season",
+      "source": "wehoop_wnba_stats",
+      "metrics": [
+        {
+          "key": "points",
+          "label": "Points"
+        },
+        {
+          "key": "rebounds",
+          "label": "Rebounds"
+        },
+        {
+          "key": "assists",
+          "label": "Assists"
+        },
+        {
+          "key": "threes",
+          "label": "3PM"
+        },
+        {
+          "key": "minutes",
+          "label": "Minutes"
+        }
+      ],
+      "coverage_start": "2025-06-10",
+      "coverage_end": "2025-06-10",
+      "last_observed_at": "2026-06-20T12:00:00+00:00",
+      "recorded_appearances": 1,
+      "latest_appearance": "2025-06-10",
+      "date_precision": "eastern_date",
+      "reference_date": "2026-06-21",
+      "calendar_day_gap": 376,
+      "full_intervening_days": 375,
+      "l5": {
+        "appearances": 1,
+        "points": {
+          "average": 0.0,
+          "valid_samples": 1
+        },
+        "rebounds": {
+          "average": 4.0,
+          "valid_samples": 1
+        },
+        "assists": {
+          "average": 3.0,
+          "valid_samples": 1
+        },
+        "threes": {
+          "average": null,
+          "valid_samples": 0
+        },
+        "minutes": {
+          "average": 24.5,
+          "valid_samples": 1
+        }
+      },
+      "l10": {
+        "appearances": 1,
+        "points": {
+          "average": 0.0,
+          "valid_samples": 1
+        },
+        "rebounds": {
+          "average": 4.0,
+          "valid_samples": 1
+        },
+        "assists": {
+          "average": 3.0,
+          "valid_samples": 1
+        },
+        "threes": {
+          "average": null,
+          "valid_samples": 0
+        },
+        "minutes": {
+          "average": 24.5,
+          "valid_samples": 1
+        }
+      },
+      "opponent_history": [
+        {
+          "opponent_id": "2",
+          "l5": {
+            "appearances": 1,
+            "points": {
+              "average": 0.0,
+              "valid_samples": 1
+            },
+            "rebounds": {
+              "average": 4.0,
+              "valid_samples": 1
+            },
+            "assists": {
+              "average": 3.0,
+              "valid_samples": 1
+            },
+            "threes": {
+              "average": null,
+              "valid_samples": 0
+            },
+            "minutes": {
+              "average": 24.5,
+              "valid_samples": 1
+            }
+          },
+          "l10": {
+            "appearances": 1,
+            "points": {
+              "average": 0.0,
+              "valid_samples": 1
+            },
+            "rebounds": {
+              "average": 4.0,
+              "valid_samples": 1
+            },
+            "assists": {
+              "average": 3.0,
+              "valid_samples": 1
+            },
+            "threes": {
+              "average": null,
+              "valid_samples": 0
+            },
+            "minutes": {
+              "average": 24.5,
+              "valid_samples": 1
+            }
+          }
+        }
+      ],
+      "notes": [
+        "Recorded coverage may be partial. Missing records do not establish DNP or complete team schedules.",
+        "Team rest and back-to-back status unavailable without verified schedule and Event linkage.",
+        "Each metric excludes missing values within the latest recorded appearances; seasons and competitions are separate.",
+        "Invented offline fixture; not live sports coverage."
+      ],
+      "recorded_weeks": [],
+      "coverage": {
+        "state": "historical_season",
+        "completeness": "unknown",
+        "season_scope": "historical",
+        "season": "2025",
+        "competition": "Regular Season",
+        "source": "wehoop_wnba_stats",
+        "last_game_date": "2025-06-10",
+        "source_observed_at": "2026-06-20T12:00:00+00:00",
+        "recorded_appearances": 1,
+        "l5_samples": 1,
+        "l10_samples": 1,
+        "recorded_weeks": [],
+        "limitations": [
+          "Source completeness is unknown; a recent game does not prove complete coverage."
+        ]
+      }
+    }
+  },
+  {
+    "sport": "NHL",
+    "role": "skater",
+    "player_id": "11111111-1111-4111-8111-111111111111",
+    "season": "2025-26",
+    "summary": {
+      "status": "available",
+      "sport": "NHL",
+      "season": "2025-26",
+      "competition": "Regular Season",
+      "source": "nhl_web",
+      "metrics": [
+        {
+          "key": "goals",
+          "label": "Goals"
+        },
+        {
+          "key": "assists",
+          "label": "Assists"
+        },
+        {
+          "key": "points",
+          "label": "Points"
+        },
+        {
+          "key": "shots_on_goal",
+          "label": "SOG"
+        },
+        {
+          "key": "time_on_ice",
+          "label": "Time on ice"
+        }
+      ],
+      "coverage_start": "2025-10-10",
+      "coverage_end": "2025-10-10",
+      "last_observed_at": "2026-06-20T12:00:00+00:00",
+      "recorded_appearances": 1,
+      "latest_appearance": "2025-10-10",
+      "date_precision": "eastern_date",
+      "reference_date": "2026-06-21",
+      "calendar_day_gap": 254,
+      "full_intervening_days": 253,
+      "l5": {
+        "appearances": 1,
+        "goals": {
+          "average": 1.0,
+          "valid_samples": 1
+        },
+        "assists": {
+          "average": 2.0,
+          "valid_samples": 1
+        },
+        "points": {
+          "average": 3.0,
+          "valid_samples": 1
+        },
+        "shots_on_goal": {
+          "average": 5.0,
+          "valid_samples": 1
+        },
+        "time_on_ice": {
+          "average": 21.5,
+          "valid_samples": 1
+        }
+      },
+      "l10": {
+        "appearances": 1,
+        "goals": {
+          "average": 1.0,
+          "valid_samples": 1
+        },
+        "assists": {
+          "average": 2.0,
+          "valid_samples": 1
+        },
+        "points": {
+          "average": 3.0,
+          "valid_samples": 1
+        },
+        "shots_on_goal": {
+          "average": 5.0,
+          "valid_samples": 1
+        },
+        "time_on_ice": {
+          "average": 21.5,
+          "valid_samples": 1
+        }
+      },
+      "opponent_history": [
+        {
+          "opponent_id": "AAA",
+          "l5": {
+            "appearances": 1,
+            "goals": {
+              "average": 1.0,
+              "valid_samples": 1
+            },
+            "assists": {
+              "average": 2.0,
+              "valid_samples": 1
+            },
+            "points": {
+              "average": 3.0,
+              "valid_samples": 1
+            },
+            "shots_on_goal": {
+              "average": 5.0,
+              "valid_samples": 1
+            },
+            "time_on_ice": {
+              "average": 21.5,
+              "valid_samples": 1
+            }
+          },
+          "l10": {
+            "appearances": 1,
+            "goals": {
+              "average": 1.0,
+              "valid_samples": 1
+            },
+            "assists": {
+              "average": 2.0,
+              "valid_samples": 1
+            },
+            "points": {
+              "average": 3.0,
+              "valid_samples": 1
+            },
+            "shots_on_goal": {
+              "average": 5.0,
+              "valid_samples": 1
+            },
+            "time_on_ice": {
+              "average": 21.5,
+              "valid_samples": 1
+            }
+          }
+        }
+      ],
+      "notes": [
+        "Recorded coverage may be partial. Missing records do not establish DNP or complete team schedules.",
+        "Team rest and back-to-back status unavailable without verified schedule and Event linkage.",
+        "Each metric excludes missing values within the latest recorded appearances; seasons and competitions are separate.",
+        "Invented offline fixture; not live sports coverage."
+      ],
+      "recorded_weeks": [],
+      "coverage": {
+        "state": "partial_current_season",
+        "completeness": "unknown",
+        "season_scope": "current",
+        "season": "2025-26",
+        "competition": "Regular Season",
+        "source": "nhl_web",
+        "last_game_date": "2025-10-10",
+        "source_observed_at": "2026-06-20T12:00:00+00:00",
+        "recorded_appearances": 1,
+        "l5_samples": 1,
+        "l10_samples": 1,
+        "recorded_weeks": [],
+        "limitations": [
+          "Source completeness is unknown; a recent game does not prove complete coverage."
+        ]
+      }
+    }
+  },
+  {
+    "sport": "NHL",
+    "role": "goalie",
+    "player_id": "11111111-1111-4111-8111-111111111111",
+    "season": "2025-26",
+    "summary": {
+      "status": "available",
+      "sport": "NHL",
+      "season": "2025-26",
+      "competition": "Regular Season",
+      "source": "nhl_web",
+      "metrics": [
+        {
+          "key": "saves",
+          "label": "Saves"
+        },
+        {
+          "key": "time_on_ice",
+          "label": "Time on ice"
+        }
+      ],
+      "coverage_start": "2025-10-10",
+      "coverage_end": "2025-10-10",
+      "last_observed_at": "2026-06-20T12:00:00+00:00",
+      "recorded_appearances": 1,
+      "latest_appearance": "2025-10-10",
+      "date_precision": "eastern_date",
+      "reference_date": "2026-06-21",
+      "calendar_day_gap": 254,
+      "full_intervening_days": 253,
+      "l5": {
+        "appearances": 1,
+        "saves": {
+          "average": 26.0,
+          "valid_samples": 1
+        },
+        "time_on_ice": {
+          "average": 21.5,
+          "valid_samples": 1
+        }
+      },
+      "l10": {
+        "appearances": 1,
+        "saves": {
+          "average": 26.0,
+          "valid_samples": 1
+        },
+        "time_on_ice": {
+          "average": 21.5,
+          "valid_samples": 1
+        }
+      },
+      "opponent_history": [
+        {
+          "opponent_id": "AAA",
+          "l5": {
+            "appearances": 1,
+            "saves": {
+              "average": 26.0,
+              "valid_samples": 1
+            },
+            "time_on_ice": {
+              "average": 21.5,
+              "valid_samples": 1
+            }
+          },
+          "l10": {
+            "appearances": 1,
+            "saves": {
+              "average": 26.0,
+              "valid_samples": 1
+            },
+            "time_on_ice": {
+              "average": 21.5,
+              "valid_samples": 1
+            }
+          }
+        }
+      ],
+      "notes": [
+        "Recorded coverage may be partial. Missing records do not establish DNP or complete team schedules.",
+        "Team rest and back-to-back status unavailable without verified schedule and Event linkage.",
+        "Each metric excludes missing values within the latest recorded appearances; seasons and competitions are separate.",
+        "Invented offline fixture; not live sports coverage."
+      ],
+      "recorded_weeks": [],
+      "coverage": {
+        "state": "partial_current_season",
+        "completeness": "unknown",
+        "season_scope": "current",
+        "season": "2025-26",
+        "competition": "Regular Season",
+        "source": "nhl_web",
+        "last_game_date": "2025-10-10",
+        "source_observed_at": "2026-06-20T12:00:00+00:00",
+        "recorded_appearances": 1,
+        "l5_samples": 1,
+        "l10_samples": 1,
+        "recorded_weeks": [],
+        "limitations": [
+          "Source completeness is unknown; a recent game does not prove complete coverage."
+        ]
+      }
+    }
+  },
+  {
+    "sport": "NFL",
+    "role": "player",
+    "player_id": "11111111-1111-4111-8111-111111111111",
+    "season": "2025",
+    "summary": {
+      "status": "available",
+      "sport": "NFL",
+      "season": "2025",
+      "competition": "Regular Season",
+      "source": "nflverse",
+      "metrics": [
+        {
+          "key": "pass_yds",
+          "label": "Passing yards"
+        },
+        {
+          "key": "pass_tds",
+          "label": "Passing TDs"
+        },
+        {
+          "key": "rush_yds",
+          "label": "Rushing yards"
+        },
+        {
+          "key": "rush_tds",
+          "label": "Rushing TDs"
+        },
+        {
+          "key": "reception_yds",
+          "label": "Receiving yards"
+        },
+        {
+          "key": "receptions",
+          "label": "Receptions"
+        },
+        {
+          "key": "receiving_tds",
+          "label": "Receiving TDs"
+        }
+      ],
+      "coverage_start": "2025-09-07",
+      "coverage_end": "2025-09-07",
+      "last_observed_at": "2026-06-20T12:00:00+00:00",
+      "recorded_appearances": 1,
+      "latest_appearance": "2025-09-07",
+      "date_precision": "eastern_date",
+      "reference_date": "2026-06-21",
+      "calendar_day_gap": 287,
+      "full_intervening_days": 286,
+      "l5": {
+        "appearances": 1,
+        "pass_yds": {
+          "average": 220.0,
+          "valid_samples": 1
+        },
+        "pass_tds": {
+          "average": 2.0,
+          "valid_samples": 1
+        },
+        "rush_yds": {
+          "average": -2.0,
+          "valid_samples": 1
+        },
+        "rush_tds": {
+          "average": 0.0,
+          "valid_samples": 1
+        },
+        "reception_yds": {
+          "average": null,
+          "valid_samples": 0
+        },
+        "receptions": {
+          "average": 0.0,
+          "valid_samples": 1
+        },
+        "receiving_tds": {
+          "average": 0.0,
+          "valid_samples": 1
+        }
+      },
+      "l10": {
+        "appearances": 1,
+        "pass_yds": {
+          "average": 220.0,
+          "valid_samples": 1
+        },
+        "pass_tds": {
+          "average": 2.0,
+          "valid_samples": 1
+        },
+        "rush_yds": {
+          "average": -2.0,
+          "valid_samples": 1
+        },
+        "rush_tds": {
+          "average": 0.0,
+          "valid_samples": 1
+        },
+        "reception_yds": {
+          "average": null,
+          "valid_samples": 0
+        },
+        "receptions": {
+          "average": 0.0,
+          "valid_samples": 1
+        },
+        "receiving_tds": {
+          "average": 0.0,
+          "valid_samples": 1
+        }
+      },
+      "opponent_history": [
+        {
+          "opponent_id": "BBB",
+          "l5": {
+            "appearances": 1,
+            "pass_yds": {
+              "average": 220.0,
+              "valid_samples": 1
+            },
+            "pass_tds": {
+              "average": 2.0,
+              "valid_samples": 1
+            },
+            "rush_yds": {
+              "average": -2.0,
+              "valid_samples": 1
+            },
+            "rush_tds": {
+              "average": 0.0,
+              "valid_samples": 1
+            },
+            "reception_yds": {
+              "average": null,
+              "valid_samples": 0
+            },
+            "receptions": {
+              "average": 0.0,
+              "valid_samples": 1
+            },
+            "receiving_tds": {
+              "average": 0.0,
+              "valid_samples": 1
+            }
+          },
+          "l10": {
+            "appearances": 1,
+            "pass_yds": {
+              "average": 220.0,
+              "valid_samples": 1
+            },
+            "pass_tds": {
+              "average": 2.0,
+              "valid_samples": 1
+            },
+            "rush_yds": {
+              "average": -2.0,
+              "valid_samples": 1
+            },
+            "rush_tds": {
+              "average": 0.0,
+              "valid_samples": 1
+            },
+            "reception_yds": {
+              "average": null,
+              "valid_samples": 0
+            },
+            "receptions": {
+              "average": 0.0,
+              "valid_samples": 1
+            },
+            "receiving_tds": {
+              "average": 0.0,
+              "valid_samples": 1
+            }
+          }
+        }
+      ],
+      "notes": [
+        "Recorded coverage may be partial. Missing records do not establish DNP or complete team schedules.",
+        "Team rest and back-to-back status unavailable without verified schedule and Event linkage.",
+        "Each metric excludes missing values within the latest recorded appearances; seasons and competitions are separate.",
+        "Invented offline fixture; not live sports coverage."
+      ],
+      "recorded_weeks": [
+        1
+      ],
+      "coverage": {
+        "state": "historical_season",
+        "completeness": "unknown",
+        "season_scope": "historical",
+        "season": "2025",
+        "competition": "Regular Season",
+        "source": "nflverse",
+        "last_game_date": "2025-09-07",
+        "source_observed_at": "2026-06-20T12:00:00+00:00",
+        "recorded_appearances": 1,
+        "l5_samples": 1,
+        "l10_samples": 1,
+        "recorded_weeks": [
+          1
+        ],
+        "limitations": [
+          "Source completeness is unknown; a recent game does not prove complete coverage."
+        ]
+      }
+    }
+  },
+  {
+    "sport": "MLB",
+    "role": "batter",
+    "player_id": "11111111-1111-4111-8111-111111111111",
+    "season": "2025",
+    "summary": {
+      "status": "available",
+      "sport": "MLB",
+      "season": "2025",
+      "competition": "Regular Season",
+      "source": "mlb_stats_api",
+      "metrics": [
+        {
+          "key": "hits",
+          "label": "Hits"
+        },
+        {
+          "key": "runs",
+          "label": "Runs"
+        },
+        {
+          "key": "rbis",
+          "label": "RBIs"
+        },
+        {
+          "key": "total_bases",
+          "label": "Total bases"
+        },
+        {
+          "key": "home_runs",
+          "label": "Home runs"
+        }
+      ],
+      "coverage_start": "2025-06-10",
+      "coverage_end": "2025-06-10",
+      "last_observed_at": "2026-06-20T12:00:00+00:00",
+      "recorded_appearances": 1,
+      "latest_appearance": "2025-06-10",
+      "date_precision": "eastern_date",
+      "reference_date": "2026-06-21",
+      "calendar_day_gap": 376,
+      "full_intervening_days": 375,
+      "l5": {
+        "appearances": 1,
+        "hits": {
+          "average": 2.0,
+          "valid_samples": 1
+        },
+        "runs": {
+          "average": 1.0,
+          "valid_samples": 1
+        },
+        "rbis": {
+          "average": 2.0,
+          "valid_samples": 1
+        },
+        "total_bases": {
+          "average": 5.0,
+          "valid_samples": 1
+        },
+        "home_runs": {
+          "average": 1.0,
+          "valid_samples": 1
+        }
+      },
+      "l10": {
+        "appearances": 1,
+        "hits": {
+          "average": 2.0,
+          "valid_samples": 1
+        },
+        "runs": {
+          "average": 1.0,
+          "valid_samples": 1
+        },
+        "rbis": {
+          "average": 2.0,
+          "valid_samples": 1
+        },
+        "total_bases": {
+          "average": 5.0,
+          "valid_samples": 1
+        },
+        "home_runs": {
+          "average": 1.0,
+          "valid_samples": 1
+        }
+      },
+      "opponent_history": [
+        {
+          "opponent_id": "2",
+          "l5": {
+            "appearances": 1,
+            "hits": {
+              "average": 2.0,
+              "valid_samples": 1
+            },
+            "runs": {
+              "average": 1.0,
+              "valid_samples": 1
+            },
+            "rbis": {
+              "average": 2.0,
+              "valid_samples": 1
+            },
+            "total_bases": {
+              "average": 5.0,
+              "valid_samples": 1
+            },
+            "home_runs": {
+              "average": 1.0,
+              "valid_samples": 1
+            }
+          },
+          "l10": {
+            "appearances": 1,
+            "hits": {
+              "average": 2.0,
+              "valid_samples": 1
+            },
+            "runs": {
+              "average": 1.0,
+              "valid_samples": 1
+            },
+            "rbis": {
+              "average": 2.0,
+              "valid_samples": 1
+            },
+            "total_bases": {
+              "average": 5.0,
+              "valid_samples": 1
+            },
+            "home_runs": {
+              "average": 1.0,
+              "valid_samples": 1
+            }
+          }
+        }
+      ],
+      "notes": [
+        "Recorded coverage may be partial. Missing records do not establish DNP or complete team schedules.",
+        "Team rest and back-to-back status unavailable without verified schedule and Event linkage.",
+        "Each metric excludes missing values within the latest recorded appearances; seasons and competitions are separate.",
+        "Invented offline fixture; not live sports coverage."
+      ],
+      "recorded_weeks": [],
+      "coverage": {
+        "state": "historical_season",
+        "completeness": "unknown",
+        "season_scope": "historical",
+        "season": "2025",
+        "competition": "Regular Season",
+        "source": "mlb_stats_api",
+        "last_game_date": "2025-06-10",
+        "source_observed_at": "2026-06-20T12:00:00+00:00",
+        "recorded_appearances": 1,
+        "l5_samples": 1,
+        "l10_samples": 1,
+        "recorded_weeks": [],
+        "limitations": [
+          "Source completeness is unknown; a recent game does not prove complete coverage."
+        ]
+      }
+    }
+  },
+  {
+    "sport": "MLB",
+    "role": "pitcher",
+    "player_id": "11111111-1111-4111-8111-111111111111",
+    "season": "2025",
+    "summary": {
+      "status": "available",
+      "sport": "MLB",
+      "season": "2025",
+      "competition": "Regular Season",
+      "source": "mlb_stats_api",
+      "metrics": [
+        {
+          "key": "strikeouts",
+          "label": "Strikeouts"
+        },
+        {
+          "key": "outs_recorded",
+          "label": "Outs recorded"
+        },
+        {
+          "key": "earned_runs",
+          "label": "Earned runs"
+        }
+      ],
+      "coverage_start": "2025-06-10",
+      "coverage_end": "2025-06-10",
+      "last_observed_at": "2026-06-20T12:00:00+00:00",
+      "recorded_appearances": 1,
+      "latest_appearance": "2025-06-10",
+      "date_precision": "eastern_date",
+      "reference_date": "2026-06-21",
+      "calendar_day_gap": 376,
+      "full_intervening_days": 375,
+      "l5": {
+        "appearances": 1,
+        "strikeouts": {
+          "average": 7.0,
+          "valid_samples": 1
+        },
+        "outs_recorded": {
+          "average": 17.0,
+          "valid_samples": 1
+        },
+        "earned_runs": {
+          "average": 2.0,
+          "valid_samples": 1
+        }
+      },
+      "l10": {
+        "appearances": 1,
+        "strikeouts": {
+          "average": 7.0,
+          "valid_samples": 1
+        },
+        "outs_recorded": {
+          "average": 17.0,
+          "valid_samples": 1
+        },
+        "earned_runs": {
+          "average": 2.0,
+          "valid_samples": 1
+        }
+      },
+      "opponent_history": [
+        {
+          "opponent_id": "2",
+          "l5": {
+            "appearances": 1,
+            "strikeouts": {
+              "average": 7.0,
+              "valid_samples": 1
+            },
+            "outs_recorded": {
+              "average": 17.0,
+              "valid_samples": 1
+            },
+            "earned_runs": {
+              "average": 2.0,
+              "valid_samples": 1
+            }
+          },
+          "l10": {
+            "appearances": 1,
+            "strikeouts": {
+              "average": 7.0,
+              "valid_samples": 1
+            },
+            "outs_recorded": {
+              "average": 17.0,
+              "valid_samples": 1
+            },
+            "earned_runs": {
+              "average": 2.0,
+              "valid_samples": 1
+            }
+          }
+        }
+      ],
+      "notes": [
+        "Recorded coverage may be partial. Missing records do not establish DNP or complete team schedules.",
+        "Team rest and back-to-back status unavailable without verified schedule and Event linkage.",
+        "Each metric excludes missing values within the latest recorded appearances; seasons and competitions are separate.",
+        "Invented offline fixture; not live sports coverage."
+      ],
+      "recorded_weeks": [],
+      "coverage": {
+        "state": "historical_season",
+        "completeness": "unknown",
+        "season_scope": "historical",
+        "season": "2025",
+        "competition": "Regular Season",
+        "source": "mlb_stats_api",
+        "last_game_date": "2025-06-10",
+        "source_observed_at": "2026-06-20T12:00:00+00:00",
+        "recorded_appearances": 1,
+        "l5_samples": 1,
+        "l10_samples": 1,
+        "recorded_weeks": [],
+        "limitations": [
+          "Source completeness is unknown; a recent game does not prove complete coverage."
+        ]
+      }
+    }
+  },
+  {
+    "sport": "NBA",
+    "role": "player",
+    "player_id": "5b000000-0000-4000-8000-000000000001",
+    "season": "2025-26",
+    "summary": {
+      "status": "available",
+      "season": "2025-26",
+      "competition": "Regular Season",
+      "source": "nba_com_stats",
+      "coverage_start": "2026-06-07",
+      "coverage_end": "2026-06-18",
+      "last_observed_at": "2026-06-21T11:00:00+00:00",
+      "recorded_appearances": 12,
+      "latest_appearance": "2026-06-18",
+      "date_precision": "eastern_date",
+      "reference_date": "2026-06-21",
+      "calendar_day_gap": 3,
+      "full_intervening_days": 2,
+      "metrics": [
+        {
+          "key": "points",
+          "label": "Points"
+        },
+        {
+          "key": "rebounds",
+          "label": "Rebounds"
+        },
+        {
+          "key": "assists",
+          "label": "Assists"
+        },
+        {
+          "key": "threes",
+          "label": "3PM"
+        },
+        {
+          "key": "minutes",
+          "label": "Minutes"
+        }
+      ],
+      "l5": {
+        "appearances": 5,
+        "points": {
+          "average": 4.0,
+          "valid_samples": 4
+        },
+        "rebounds": {
+          "average": 1.75,
+          "valid_samples": 4
+        },
+        "assists": {
+          "average": 2.8,
+          "valid_samples": 5
+        },
+        "threes": {
+          "average": null,
+          "valid_samples": 0
+        },
+        "minutes": {
+          "average": 32.25,
+          "valid_samples": 4
+        }
+      },
+      "l10": {
+        "appearances": 10,
+        "points": {
+          "average": 9.56,
+          "valid_samples": 9
+        },
+        "rebounds": {
+          "average": 4.67,
+          "valid_samples": 9
+        },
+        "assists": {
+          "average": 5.4,
+          "valid_samples": 10
+        },
+        "threes": {
+          "average": null,
+          "valid_samples": 0
+        },
+        "minutes": {
+          "average": 34.89,
+          "valid_samples": 9
+        }
+      },
+      "notes": [
+        "Recorded coverage is partial; this does not establish complete season history or missed games.",
+        "Small or incomplete samples: each metric uses only its valid values within the selected appearances.",
+        "Invented offline fixture; not live sports coverage."
+      ],
+      "coverage": {
+        "state": "partial_current_season",
+        "completeness": "unknown",
+        "season_scope": "current",
+        "season": "2025-26",
+        "competition": "Regular Season",
+        "source": "nba_com_stats",
+        "last_game_date": "2026-06-18",
+        "source_observed_at": "2026-06-21T11:00:00+00:00",
+        "recorded_appearances": 12,
+        "l5_samples": 5,
+        "l10_samples": 10,
+        "recorded_weeks": [],
+        "limitations": [
+          "Source completeness is unknown; a recent game does not prove complete coverage."
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,16 @@
+# Allow only runtime source and migration inputs into the backend build context.
+**
+!requirements.txt
+!requirements.lock.txt
+!app/
+!app/**
+!scripts/
+!scripts/**
+!alembic.ini
+!alembic/
+!alembic/**
+!docker/
+!docker/assemble_runtime.py
+**/__pycache__/
+**/*.pyc
+**/.env*

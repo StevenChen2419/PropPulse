@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; --background: #0b111b; --foreground: #ecf2f8; --surface: #121c29; --border: #223145; --accent: #5ee0bd; --radius: 12px; --space: 4px; }
+@layer base {
+  * { box-sizing: border-box; }
+  html { scroll-padding-top: 100px; }
+  body { margin: 0; min-height: 100vh; background: var(--background); color: var(--foreground); font-family: "Segoe UI", Arial, Helvetica, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  button, input, select, textarea { font: inherit; }
+  button, a, input, select, summary { -webkit-tap-highlight-color: transparent; }
+  button { touch-action: manipulation; min-width: 44px; flex-shrink: 0; }
+  button:not(:disabled), summary { cursor: pointer; }
+  button:disabled { cursor: not-allowed; }
+  button, input:not([type=range]), select { min-height: 44px; }
+  input, select, textarea { max-width: 100%; background-color: var(--surface); color: var(--foreground); }
+  input::placeholder { color: #8c9eb4; }
+  select { text-overflow: ellipsis; }
+  :focus-visible { outline: 2px solid var(--accent) !important; outline-offset: 3px; }
+  ::selection { background: #27665c; color: #fff; }
+  h1, h2, h3, p { overflow-wrap: anywhere; }
+  h1 { letter-spacing: -.035em; }
+  h2, h3 { letter-spacing: -.015em; }
+  main { padding-bottom: 100px; }
+  main > div { min-width: 0; }
+  svg { flex-shrink: 0; }
+  th, td, dd, .tabular-nums { font-variant-numeric: tabular-nums; }
+}
+@layer components {
+  .workspace { @apply mx-auto w-full max-w-6xl px-4 py-7 sm:px-6 sm:py-10; }
+  .page-heading { @apply mb-7 flex flex-wrap items-start justify-between gap-4 border-b border-gray-100 pb-6; }
+  .eyebrow { @apply mb-2 text-[11px] font-semibold uppercase tracking-[.18em] text-blue-500; }
+  .page-title { @apply text-3xl font-semibold text-ink sm:text-4xl; }
+  .page-description { @apply mt-2 max-w-2xl text-sm leading-relaxed text-muted; }
+  .panel { @apply rounded-2xl border border-gray-100 bg-surface p-4 shadow-panel sm:p-6; }
+  .button { @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-gray-200 bg-surface px-4 py-2 text-sm font-medium text-ink transition-colors hover:bg-raised disabled:opacity-50; }
+  .button-primary { @apply border-transparent bg-blue-600 text-[#ffffff] hover:bg-[#23836e]; }
+  .search-field { @apply relative block; }
+  .search-field input { @apply w-full rounded-xl border border-gray-200 bg-surface py-3 pl-11 pr-4 text-sm text-ink; }
+  .search-field svg { @apply absolute left-4 top-1/2 -translate-y-1/2 text-muted; }
+  .empty-state { @apply rounded-2xl border border-dashed border-gray-200 bg-surface px-5 py-12 text-center; }
+  .prop-grid { @apply grid items-start gap-4 md:grid-cols-2; }
+  .prop-card { @apply relative min-w-0 rounded-2xl border border-gray-100 bg-surface p-4 shadow-panel transition-colors hover:border-gray-200 sm:p-5; }
+  .filter-panel { @apply mb-5 rounded-2xl border border-gray-100 bg-surface p-4 sm:p-5; }
+  .player-avatar { @apply flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-blue-100 bg-blue-50 text-lg font-bold text-blue-500; }
+  .metric-card { @apply min-w-0 rounded-xl border border-gray-100 bg-canvas p-4; }
+  .research-workspace > * { min-width: 0; }
+  .research-workspace > section, .research-workspace > details { @apply shadow-panel; }
+  .research-workspace > section:first-of-type { @apply border-t-2 border-t-blue-400; }
+  .recharts-wrapper { max-width: 100%; }
+  .recharts-default-tooltip { background: var(--surface) !important; border: 1px solid var(--border) !important; border-radius: var(--radius); }
+  .recharts-cartesian-axis-tick text { fill: #9cacc0; }
+  .recharts-cartesian-grid line { stroke: #223145; }
+}
+@media (min-width: 1024px) {
+  .research-workspace { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; align-items: start; }
+  .research-workspace > * { margin-bottom: 0; }
+  .research-workspace > button, .research-workspace > .player-identity, .research-workspace > .research-controls, .research-workspace > .season-summary, .research-workspace > details, .research-workspace > [role=alert], .research-workspace > section:last-child { grid-column: 1 / -1; }
+}
+@media (max-width: 639px) {
+  main h1 { font-size: 1.65rem; }
+  .research-workspace > section { padding: 16px; }
+  .research-workspace .grid-cols-3 { gap: 6px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+@layer utilities {
+  .text-blue-600 { color: #5ee0bd; }
+  .text-indigo-600 { color: #9eb8f3; }
+  .bg-emerald-700 { background-color: #236a55; }
+}

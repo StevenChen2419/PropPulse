@@ -1,0 +1,1794 @@
+[
+  {
+    "sport": "NBA",
+    "role": null,
+    "exact": {
+      "player_id": "5b000000-0000-4000-8000-000000000001",
+      "sport": "NBA",
+      "market": "points",
+      "metrics": [
+        "points"
+      ],
+      "line": 2,
+      "side": "over",
+      "season": "2026-27",
+      "competition": "Regular Season",
+      "source": "nba_com_stats",
+      "coverage": {
+        "state": "partial_current_season",
+        "completeness": "unknown",
+        "season_scope": "current",
+        "season": "2026-27",
+        "competition": "Regular Season",
+        "source": "nba_com_stats",
+        "last_game_date": "2026-10-18",
+        "source_observed_at": "2026-10-21T17:00:00+00:00",
+        "recorded_appearances": 4,
+        "l5_samples": 4,
+        "l10_samples": 4,
+        "recorded_weeks": [],
+        "limitations": [
+          "Source completeness is unknown; a recent game does not prove complete coverage."
+        ]
+      },
+      "reference_at": "2026-10-21T18:00:00+00:00",
+      "last_game_date": "2026-10-18",
+      "source_observed_at": "2026-10-21T17:00:00+00:00",
+      "games": [
+        {
+          "game_id": "nba_com:0022600001-invented-0",
+          "game_date": "2026-10-18",
+          "value": 3.0,
+          "outcome": "over",
+          "opponent_id": "1610612753",
+          "source": "nba_com_stats",
+          "source_observed_at": "2026-10-21T17:00:00+00:00"
+        },
+        {
+          "game_id": "nba_com:0022600001-invented-1",
+          "game_date": "2026-10-17",
+          "value": 2.0,
+          "outcome": "push",
+          "opponent_id": "1610612753",
+          "source": "nba_com_stats",
+          "source_observed_at": "2026-10-21T17:00:00+00:00"
+        },
+        {
+          "game_id": "nba_com:0022600001-invented-2",
+          "game_date": "2026-10-16",
+          "value": 1.0,
+          "outcome": "under",
+          "opponent_id": "1610612753",
+          "source": "nba_com_stats",
+          "source_observed_at": "2026-10-21T17:00:00+00:00"
+        },
+        {
+          "game_id": "nba_com:0022600001-invented-3",
+          "game_date": "2026-10-15",
+          "value": null,
+          "outcome": "missing",
+          "opponent_id": "1610612753",
+          "source": "nba_com_stats",
+          "source_observed_at": "2026-10-21T17:00:00+00:00"
+        }
+      ],
+      "opponents": [
+        {
+          "opponent_id": "1610612753",
+          "source": "nba_com_stats",
+          "games": [
+            {
+              "game_id": "nba_com:0022600001-invented-0",
+              "game_date": "2026-10-18",
+              "value": 3.0,
+              "outcome": "over",
+              "opponent_id": "1610612753",
+              "source": "nba_com_stats",
+              "source_observed_at": "2026-10-21T17:00:00+00:00"
+            },
+            {
+              "game_id": "nba_com:0022600001-invented-1",
+              "game_date": "2026-10-17",
+              "value": 2.0,
+              "outcome": "push",
+              "opponent_id": "1610612753",
+              "source": "nba_com_stats",
+              "source_observed_at": "2026-10-21T17:00:00+00:00"
+            },
+            {
+              "game_id": "nba_com:0022600001-invented-2",
+              "game_date": "2026-10-16",
+              "value": 1.0,
+              "outcome": "under",
+              "opponent_id": "1610612753",
+              "source": "nba_com_stats",
+              "source_observed_at": "2026-10-21T17:00:00+00:00"
+            },
+            {
+              "game_id": "nba_com:0022600001-invented-3",
+              "game_date": "2026-10-15",
+              "value": null,
+              "outcome": "missing",
+              "opponent_id": "1610612753",
+              "source": "nba_com_stats",
+              "source_observed_at": "2026-10-21T17:00:00+00:00"
+            }
+          ],
+          "l5": {
+            "appearances": 4,
+            "valid_samples": 3,
+            "missing_samples": 1,
+            "over_hits": 1,
+            "under_hits": 1,
+            "pushes": 1,
+            "hits": 1,
+            "losses": 1,
+            "raw_hit_rate": 0.3333333333333333,
+            "settled_decisions": 2,
+            "settled_hit_rate": 0.5
+          },
+          "l10": {
+            "appearances": 4,
+            "valid_samples": 3,
+            "missing_samples": 1,
+            "over_hits": 1,
+            "under_hits": 1,
+            "pushes": 1,
+            "hits": 1,
+            "losses": 1,
+            "raw_hit_rate": 0.3333333333333333,
+            "settled_decisions": 2,
+            "settled_hit_rate": 0.5
+          },
+          "season_window": {
+            "appearances": 4,
+            "valid_samples": 3,
+            "missing_samples": 1,
+            "over_hits": 1,
+            "under_hits": 1,
+            "pushes": 1,
+            "hits": 1,
+            "losses": 1,
+            "raw_hit_rate": 0.3333333333333333,
+            "settled_decisions": 2,
+            "settled_hit_rate": 0.5
+          }
+        }
+      ],
+      "current_opponent_id": null,
+      "limitations": [
+        "Recorded coverage may be incomplete. Descriptive hit rates are not future probabilities.",
+        "L5/L10 select appearances before excluding missing metrics; pushes are never wins.",
+        "Raw hit rate uses all valid outcomes; settled rate explicitly excludes pushes.",
+        "Invented offline fixture; not real sports coverage."
+      ],
+      "l5": {
+        "appearances": 4,
+        "valid_samples": 3,
+        "missing_samples": 1,
+        "over_hits": 1,
+        "under_hits": 1,
+        "pushes": 1,
+        "hits": 1,
+        "losses": 1,
+        "raw_hit_rate": 0.3333333333333333,
+        "settled_decisions": 2,
+        "settled_hit_rate": 0.5
+      },
+      "l10": {
+        "appearances": 4,
+        "valid_samples": 3,
+        "missing_samples": 1,
+        "over_hits": 1,
+        "under_hits": 1,
+        "pushes": 1,
+        "hits": 1,
+        "losses": 1,
+        "raw_hit_rate": 0.3333333333333333,
+        "settled_decisions": 2,
+        "settled_hit_rate": 0.5
+      },
+      "season_window": {
+        "appearances": 4,
+        "valid_samples": 3,
+        "missing_samples": 1,
+        "over_hits": 1,
+        "under_hits": 1,
+        "pushes": 1,
+        "hits": 1,
+        "losses": 1,
+        "raw_hit_rate": 0.3333333333333333,
+        "settled_decisions": 2,
+        "settled_hit_rate": 0.5
+      },
+      "status": "available",
+      "selection": {
+        "sportsbook": "FanDuel",
+        "line": 2,
+        "side": "over",
+        "actionable": false,
+        "availability": "expired",
+        "odds": null,
+        "provider_observed_at": "2026-10-20T00:00:00Z"
+      },
+      "offer_options": [
+        {
+          "sportsbook": "FanDuel",
+          "line": 2
+        },
+        {
+          "sportsbook": "DraftKings",
+          "line": 2.5
+        }
+      ]
+    }
+  },
+  {
+    "sport": "WNBA",
+    "role": null,
+    "exact": {
+      "player_id": "11111111-1111-4111-8111-111111111111",
+      "sport": "WNBA",
+      "market": "points",
+      "metrics": [
+        "points"
+      ],
+      "line": 2,
+      "side": "over",
+      "season": "2025",
+      "competition": "Regular Season",
+      "source": "wehoop_wnba_stats",
+      "coverage": {
+        "state": "historical_season",
+        "completeness": "unknown",
+        "season_scope": "historical",
+        "season": "2025",
+        "competition": "Regular Season",
+        "source": "wehoop_wnba_stats",
+        "last_game_date": "2025-06-10",
+        "source_observed_at": "2026-06-20T12:00:00+00:00",
+        "recorded_appearances": 4,
+        "l5_samples": 4,
+        "l10_samples": 4,
+        "recorded_weeks": [],
+        "limitations": [
+          "Source completeness is unknown; a recent game does not prove complete coverage."
+        ]
+      },
+      "reference_at": "2026-10-21T18:00:00+00:00",
+      "last_game_date": "2025-06-10",
+      "source_observed_at": "2026-06-20T12:00:00+00:00",
+      "games": [
+        {
+          "game_id": "wehoop_wnba_stats:1022500001-invented-0",
+          "game_date": "2025-06-10",
+          "value": 3.0,
+          "outcome": "over",
+          "opponent_id": "2",
+          "source": "wehoop_wnba_stats",
+          "source_observed_at": "2026-06-20T12:00:00+00:00"
+        },
+        {
+          "game_id": "wehoop_wnba_stats:1022500001-invented-1",
+          "game_date": "2025-06-09",
+          "value": 2.0,
+          "outcome": "push",
+          "opponent_id": "2",
+          "source": "wehoop_wnba_stats",
+          "source_observed_at": "2026-06-20T12:00:00+00:00"
+        },
+        {
+          "game_id": "wehoop_wnba_stats:1022500001-invented-2",
+          "game_date": "2025-06-08",
+          "value": 1.0,
+          "outcome": "under",
+          "opponent_id": "2",
+          "source": "wehoop_wnba_stats",
+          "source_observed_at": "2026-06-20T12:00:00+00:00"
+        },
+        {
+          "game_id": "wehoop_wnba_stats:1022500001-invented-3",
+          "game_date": "2025-06-07",
+          "value": null,
+          "outcome": "missing",
+          "opponent_id": "2",
+          "source": "wehoop_wnba_stats",
+          "source_observed_at": "2026-06-20T12:00:00+00:00"
+        }
+      ],
+      "opponents": [
+        {
+          "opponent_id": "2",
+          "source": "wehoop_wnba_stats",
+          "games": [
+            {
+              "game_id": "wehoop_wnba_stats:1022500001-invented-0",
+              "game_date": "2025-06-10",
+              "value": 3.0,
+              "outcome": "over",
+              "opponent_id": "2",
+              "source": "wehoop_wnba_stats",
+              "source_observed_at": "2026-06-20T12:00:00+00:00"
+            },
+            {
+              "game_id": "wehoop_wnba_stats:1022500001-invented-1",
+              "game_date": "2025-06-09",
+              "value": 2.0,
+              "outcome": "push",
+              "opponent_id": "2",
+              "source": "wehoop_wnba_stats",
+              "source_observed_at": "2026-06-20T12:00:00+00:00"
+            },
+            {
+              "game_id": "wehoop_wnba_stats:1022500001-invented-2",
+              "game_date": "2025-06-08",
+              "value": 1.0,
+              "outcome": "under",
+              "opponent_id": "2",
+              "source": "wehoop_wnba_stats",
+              "source_observed_at": "2026-06-20T12:00:00+00:00"
+            },
+            {
+              "game_id": "wehoop_wnba_stats:1022500001-invented-3",
+              "game_date": "2025-06-07",
+              "value": null,
+              "outcome": "missing",
+              "opponent_id": "2",
+              "source": "wehoop_wnba_stats",
+              "source_observed_at": "2026-06-20T12:00:00+00:00"
+            }
+          ],
+          "l5": {
+            "appearances": 4,
+            "valid_samples": 3,
+            "missing_samples": 1,
+            "over_hits": 1,
+            "under_hits": 1,
+            "pushes": 1,
+            "hits": 1,
+            "losses": 1,
+            "raw_hit_rate": 0.3333333333333333,
+            "settled_decisions": 2,
+            "settled_hit_rate": 0.5
+          },
+          "l10": {
+            "appearances": 4,
+            "valid_samples": 3,
+            "missing_samples": 1,
+            "over_hits": 1,
+            "under_hits": 1,
+            "pushes": 1,
+            "hits": 1,
+            "losses": 1,
+            "raw_hit_rate": 0.3333333333333333,
+            "settled_decisions": 2,
+            "settled_hit_rate": 0.5
+          },
+          "season_window": {
+            "appearances": 4,
+            "valid_samples": 3,
+            "missing_samples": 1,
+            "over_hits": 1,
+            "under_hits": 1,
+            "pushes": 1,
+            "hits": 1,
+            "losses": 1,
+            "raw_hit_rate": 0.3333333333333333,
+            "settled_decisions": 2,
+            "settled_hit_rate": 0.5
+          }
+        }
+      ],
+      "current_opponent_id": null,
+      "limitations": [
+        "Recorded coverage may be incomplete. Descriptive hit rates are not future probabilities.",
+        "L5/L10 select appearances before excluding missing metrics; pushes are never wins.",
+        "Raw hit rate uses all valid outcomes; settled rate explicitly excludes pushes.",
+        "Invented offline fixture; not real sports coverage."
+      ],
+      "l5": {
+        "appearances": 4,
+        "valid_samples": 3,
+        "missing_samples": 1,
+        "over_hits": 1,
+        "under_hits": 1,
+        "pushes": 1,
+        "hits": 1,
+        "losses": 1,
+        "raw_hit_rate": 0.3333333333333333,
+        "settled_decisions": 2,
+        "settled_hit_rate": 0.5
+      },
+      "l10": {
+        "appearances": 4,
+        "valid_samples": 3,
+        "missing_samples": 1,
+        "over_hits": 1,
+        "under_hits": 1,
+        "pushes": 1,
+        "hits": 1,
+        "losses": 1,
+        "raw_hit_rate": 0.3333333333333333,
+        "settled_decisions": 2,
+        "settled_hit_rate": 0.5
+      },
+      "season_window": {
+        "appearances": 4,
+        "valid_samples": 3,
+        "missing_samples": 1,
+        "over_hits": 1,
+        "under_hits": 1,
+        "pushes": 1,
+        "hits": 1,
+        "losses": 1,
+        "raw_hit_rate": 0.3333333333333333,
+        "settled_decisions": 2,
+        "settled_hit_rate": 0.5
+      },
+      "status": "available",
+      "selection": {
+        "sportsbook": "FanDuel",
+        "line": 2,
+        "side": "over",
+        "actionable": false,
+        "availability": "expired",
+        "odds": null,
+        "provider_observed_at": "2026-10-20T00:00:00Z"
+      },
+      "offer_options": [
+        {
+          "sportsbook": "FanDuel",
+          "line": 2
+        },
+        {
+          "sportsbook": "DraftKings",
+          "line": 2.5
+        }
+      ]
+    }
+  },
+  {
+    "sport": "WNBA",
+    "role": null,
+    "exact": {
+      "player_id": "11111111-1111-4111-8111-111111111111",
+      "sport": "WNBA",
+      "market": "points",
+      "metrics": [
+        "points"
+      ],
+      "line": 2.5,
+      "side": "under",
+      "season": "2025",
+      "competition": "Regular Season",
+      "source": "wehoop_wnba_stats",
+      "coverage": {
+        "state": "historical_season",
+        "completeness": "unknown",
+        "season_scope": "historical",
+        "season": "2025",
+        "competition": "Regular Season",
+        "source": "wehoop_wnba_stats",
+        "last_game_date": "2025-06-10",
+        "source_observed_at": "2026-06-20T12:00:00+00:00",
+        "recorded_appearances": 4,
+        "l5_samples": 4,
+        "l10_samples": 4,
+        "recorded_weeks": [],
+        "limitations": [
+          "Source completeness is unknown; a recent game does not prove complete coverage."
+        ]
+      },
+      "reference_at": "2026-10-21T18:00:00+00:00",
+      "last_game_date": "2025-06-10",
+      "source_observed_at": "2026-06-20T12:00:00+00:00",
+      "games": [
+        {
+          "game_id": "wehoop_wnba_stats:1022500001-invented-0",
+          "game_date": "2025-06-10",
+          "value": 3.0,
+          "outcome": "over",
+          "opponent_id": "2",
+          "source": "wehoop_wnba_stats",
+          "source_observed_at": "2026-06-20T12:00:00+00:00"
+        },
+        {
+          "game_id": "wehoop_wnba_stats:1022500001-invented-1",
+          "game_date": "2025-06-09",
+          "value": 2.0,
+          "outcome": "under",
+          "opponent_id": "2",
+          "source": "wehoop_wnba_stats",
+          "source_observed_at": "2026-06-20T12:00:00+00:00"
+        },
+        {
+          "game_id": "wehoop_wnba_stats:1022500001-invented-2",
+          "game_date": "2025-06-08",
+          "value": 1.0,
+          "outcome": "under",
+          "opponent_id": "2",
+          "source": "wehoop_wnba_stats",
+          "source_observed_at": "2026-06-20T12:00:00+00:00"
+        },
+        {
+          "game_id": "wehoop_wnba_stats:1022500001-invented-3",
+          "game_date": "2025-06-07",
+          "value": null,
+          "outcome": "missing",
+          "opponent_id": "2",
+          "source": "wehoop_wnba_stats",
+          "source_observed_at": "2026-06-20T12:00:00+00:00"
+        }
+      ],
+      "opponents": [
+        {
+          "opponent_id": "2",
+          "source": "wehoop_wnba_stats",
+          "games": [
+            {
+              "game_id": "wehoop_wnba_stats:1022500001-invented-0",
+              "game_date": "2025-06-10",
+              "value": 3.0,
+              "outcome": "over",
+              "opponent_id": "2",
+              "source": "wehoop_wnba_stats",
+              "source_observed_at": "2026-06-20T12:00:00+00:00"
+            },
+            {
+              "game_id": "wehoop_wnba_stats:1022500001-invented-1",
+              "game_date": "2025-06-09",
+              "value": 2.0,
+              "outcome": "under",
+              "opponent_id": "2",
+              "source": "wehoop_wnba_stats",
+              "source_observed_at": "2026-06-20T12:00:00+00:00"
+            },
+            {
+              "game_id": "wehoop_wnba_stats:1022500001-invented-2",
+              "game_date": "2025-06-08",
+              "value": 1.0,
+              "outcome": "under",
+              "opponent_id": "2",
+              "source": "wehoop_wnba_stats",
+              "source_observed_at": "2026-06-20T12:00:00+00:00"
+            },
+            {
+              "game_id": "wehoop_wnba_stats:1022500001-invented-3",
+              "game_date": "2025-06-07",
+              "value": null,
+              "outcome": "missing",
+              "opponent_id": "2",
+              "source": "wehoop_wnba_stats",
+              "source_observed_at": "2026-06-20T12:00:00+00:00"
+            }
+          ],
+          "l5": {
+            "appearances": 4,
+            "valid_samples": 3,
+            "missing_samples": 1,
+            "over_hits": 1,
+            "under_hits": 2,
+            "pushes": 0,
+            "hits": 2,
+            "losses": 1,
+            "raw_hit_rate": 0.6666666666666666,
+            "settled_decisions": 3,
+            "settled_hit_rate": 0.6666666666666666
+          },
+          "l10": {
+            "appearances": 4,
+            "valid_samples": 3,
+            "missing_samples": 1,
+            "over_hits": 1,
+            "under_hits": 2,
+            "pushes": 0,
+            "hits": 2,
+            "losses": 1,
+            "raw_hit_rate": 0.6666666666666666,
+            "settled_decisions": 3,
+            "settled_hit_rate": 0.6666666666666666
+          },
+          "season_window": {
+            "appearances": 4,
+            "valid_samples": 3,
+            "missing_samples": 1,
+            "over_hits": 1,
+            "under_hits": 2,
+            "pushes": 0,
+            "hits": 2,
+            "losses": 1,
+            "raw_hit_rate": 0.6666666666666666,
+            "settled_decisions": 3,
+            "settled_hit_rate": 0.6666666666666666
+          }
+        }
+      ],
+      "current_opponent_id": null,
+      "limitations": [
+        "Recorded coverage may be incomplete. Descriptive hit rates are not future probabilities.",
+        "L5/L10 select appearances before excluding missing metrics; pushes are never wins.",
+        "Raw hit rate uses all valid outcomes; settled rate explicitly excludes pushes.",
+        "Invented offline fixture; not real sports coverage."
+      ],
+      "l5": {
+        "appearances": 4,
+        "valid_samples": 3,
+        "missing_samples": 1,
+        "over_hits": 1,
+        "under_hits": 2,
+        "pushes": 0,
+        "hits": 2,
+        "losses": 1,
+        "raw_hit_rate": 0.6666666666666666,
+        "settled_decisions": 3,
+        "settled_hit_rate": 0.6666666666666666
+      },
+      "l10": {
+        "appearances": 4,
+        "valid_samples": 3,
+        "missing_samples": 1,
+        "over_hits": 1,
+        "under_hits": 2,
+        "pushes": 0,
+        "hits": 2,
+        "losses": 1,
+        "raw_hit_rate": 0.6666666666666666,
+        "settled_decisions": 3,
+        "settled_hit_rate": 0.6666666666666666
+      },
+      "season_window": {
+        "appearances": 4,
+        "valid_samples": 3,
+        "missing_samples": 1,
+        "over_hits": 1,
+        "under_hits": 2,
+        "pushes": 0,
+        "hits": 2,
+        "losses": 1,
+        "raw_hit_rate": 0.6666666666666666,
+        "settled_decisions": 3,
+        "settled_hit_rate": 0.6666666666666666
+      },
+      "status": "available",
+      "selection": {
+        "sportsbook": "DraftKings",
+        "line": 2.5,
+        "side": "under",
+        "actionable": false,
+        "availability": "expired",
+        "odds": null,
+        "provider_observed_at": "2026-10-20T00:00:00Z"
+      },
+      "offer_options": [
+        {
+          "sportsbook": "FanDuel",
+          "line": 2
+        },
+        {
+          "sportsbook": "DraftKings",
+          "line": 2.5
+        }
+      ]
+    }
+  },
+  {
+    "sport": "NHL",
+    "role": "skater",
+    "exact": {
+      "player_id": "11111111-1111-4111-8111-111111111111",
+      "sport": "NHL",
+      "market": "shots_on_goal",
+      "metrics": [
+        "shots_on_goal"
+      ],
+      "line": 2,
+      "side": "over",
+      "season": "2025-26",
+      "competition": "Regular Season",
+      "source": "nhl_web",
+      "coverage": {
+        "state": "historical_season",
+        "completeness": "unknown",
+        "season_scope": "historical",
+        "season": "2025-26",
+        "competition": "Regular Season",
+        "source": "nhl_web",
+        "last_game_date": "2025-10-10",
+        "source_observed_at": "2026-06-20T12:00:00+00:00",
+        "recorded_appearances": 4,
+        "l5_samples": 4,
+        "l10_samples": 4,
+        "recorded_weeks": [],
+        "limitations": [
+          "Source completeness is unknown; a recent game does not prove complete coverage."
+        ]
+      },
+      "reference_at": "2026-10-21T18:00:00+00:00",
+      "last_game_date": "2025-10-10",
+      "source_observed_at": "2026-06-20T12:00:00+00:00",
+      "games": [
+        {
+          "game_id": "nhl_web:2025020001-invented-0",
+          "game_date": "2025-10-10",
+          "value": 3.0,
+          "outcome": "over",
+          "opponent_id": "AAA",
+          "source": "nhl_web",
+          "source_observed_at": "2026-06-20T12:00:00+00:00"
+        },
+        {
+          "game_id": "nhl_web:2025020001-invented-1",
+          "game_date": "2025-10-09",
+          "value": 2.0,
+          "outcome": "push",
+          "opponent_id": "AAA",
+          "source": "nhl_web",
+          "source_observed_at": "2026-06-20T12:00:00+00:00"
+        },
+        {
+          "game_id": "nhl_web:2025020001-invented-2",
+          "game_date": "2025-10-08",
+          "value": 1.0,
+          "outcome": "under",
+          "opponent_id": "AAA",
+          "source": "nhl_web",
+          "source_observed_at": "2026-06-20T12:00:00+00:00"
+        },
+        {
+          "game_id": "nhl_web:2025020001-invented-3",
+          "game_date": "2025-10-07",
+          "value": null,
+          "outcome": "missing",
+          "opponent_id": "AAA",
+          "source": "nhl_web",
+          "source_observed_at": "2026-06-20T12:00:00+00:00"
+        }
+      ],
+      "opponents": [
+        {
+          "opponent_id": "AAA",
+          "source": "nhl_web",
+          "games": [
+            {
+              "game_id": "nhl_web:2025020001-invented-0",
+              "game_date": "2025-10-10",
+              "value": 3.0,
+              "outcome": "over",
+              "opponent_id": "AAA",
+              "source": "nhl_web",
+              "source_observed_at": "2026-06-20T12:00:00+00:00"
+            },
+            {
+              "game_id": "nhl_web:2025020001-invented-1",
+              "game_date": "2025-10-09",
+              "value": 2.0,
+              "outcome": "push",
+              "opponent_id": "AAA",
+              "source": "nhl_web",
+              "source_observed_at": "2026-06-20T12:00:00+00:00"
+            },
+            {
+              "game_id": "nhl_web:2025020001-invented-2",
+              "game_date": "2025-10-08",
+              "value": 1.0,
+              "outcome": "under",
+              "opponent_id": "AAA",
+              "source": "nhl_web",
+              "source_observed_at": "2026-06-20T12:00:00+00:00"
+            },
+            {
+              "game_id": "nhl_web:2025020001-invented-3",
+              "game_date": "2025-10-07",
+              "value": null,
+              "outcome": "missing",
+              "opponent_id": "AAA",
+              "source": "nhl_web",
+              "source_observed_at": "2026-06-20T12:00:00+00:00"
+            }
+          ],
+          "l5": {
+            "appearances": 4,
+            "valid_samples": 3,
+            "missing_samples": 1,
+            "over_hits": 1,
+            "under_hits": 1,
+            "pushes": 1,
+            "hits": 1,
+            "losses": 1,
+            "raw_hit_rate": 0.3333333333333333,
+            "settled_decisions": 2,
+            "settled_hit_rate": 0.5
+          },
+          "l10": {
+            "appearances": 4,
+            "valid_samples": 3,
+            "missing_samples": 1,
+            "over_hits": 1,
+            "under_hits": 1,
+            "pushes": 1,
+            "hits": 1,
+            "losses": 1,
+            "raw_hit_rate": 0.3333333333333333,
+            "settled_decisions": 2,
+            "settled_hit_rate": 0.5
+          },
+          "season_window": {
+            "appearances": 4,
+            "valid_samples": 3,
+            "missing_samples": 1,
+            "over_hits": 1,
+            "under_hits": 1,
+            "pushes": 1,
+            "hits": 1,
+            "losses": 1,
+            "raw_hit_rate": 0.3333333333333333,
+            "settled_decisions": 2,
+            "settled_hit_rate": 0.5
+          }
+        }
+      ],
+      "current_opponent_id": null,
+      "limitations": [
+        "Recorded coverage may be incomplete. Descriptive hit rates are not future probabilities.",
+        "L5/L10 select appearances before excluding missing metrics; pushes are never wins.",
+        "Raw hit rate uses all valid outcomes; settled rate explicitly excludes pushes.",
+        "Invented offline fixture; not real sports coverage."
+      ],
+      "l5": {
+        "appearances": 4,
+        "valid_samples": 3,
+        "missing_samples": 1,
+        "over_hits": 1,
+        "under_hits": 1,
+        "pushes": 1,
+        "hits": 1,
+        "losses": 1,
+        "raw_hit_rate": 0.3333333333333333,
+        "settled_decisions": 2,
+        "settled_hit_rate": 0.5
+      },
+      "l10": {
+        "appearances": 4,
+        "valid_samples": 3,
+        "missing_samples": 1,
+        "over_hits": 1,
+        "under_hits": 1,
+        "pushes": 1,
+        "hits": 1,
+        "losses": 1,
+        "raw_hit_rate": 0.3333333333333333,
+        "settled_decisions": 2,
+        "settled_hit_rate": 0.5
+      },
+      "season_window": {
+        "appearances": 4,
+        "valid_samples": 3,
+        "missing_samples": 1,
+        "over_hits": 1,
+        "under_hits": 1,
+        "pushes": 1,
+        "hits": 1,
+        "losses": 1,
+        "raw_hit_rate": 0.3333333333333333,
+        "settled_decisions": 2,
+        "settled_hit_rate": 0.5
+      },
+      "status": "available",
+      "selection": {
+        "sportsbook": "FanDuel",
+        "line": 2,
+        "side": "over",
+        "actionable": false,
+        "availability": "expired",
+        "odds": null,
+        "provider_observed_at": "2026-10-20T00:00:00Z"
+      },
+      "offer_options": [
+        {
+          "sportsbook": "FanDuel",
+          "line": 2
+        },
+        {
+          "sportsbook": "DraftKings",
+          "line": 2.5
+        }
+      ]
+    }
+  },
+  {
+    "sport": "NHL",
+    "role": "goalie",
+    "exact": {
+      "player_id": "11111111-1111-4111-8111-111111111111",
+      "sport": "NHL",
+      "market": "saves",
+      "metrics": [
+        "saves"
+      ],
+      "line": 2,
+      "side": "over",
+      "season": "2025-26",
+      "competition": "Regular Season",
+      "source": "nhl_web",
+      "coverage": {
+        "state": "historical_season",
+        "completeness": "unknown",
+        "season_scope": "historical",
+        "season": "2025-26",
+        "competition": "Regular Season",
+        "source": "nhl_web",
+        "last_game_date": "2025-10-10",
+        "source_observed_at": "2026-06-20T12:00:00+00:00",
+        "recorded_appearances": 4,
+        "l5_samples": 4,
+        "l10_samples": 4,
+        "recorded_weeks": [],
+        "limitations": [
+          "Source completeness is unknown; a recent game does not prove complete coverage."
+        ]
+      },
+      "reference_at": "2026-10-21T18:00:00+00:00",
+      "last_game_date": "2025-10-10",
+      "source_observed_at": "2026-06-20T12:00:00+00:00",
+      "games": [
+        {
+          "game_id": "nhl_web:2025020001-invented-0",
+          "game_date": "2025-10-10",
+          "value": 3.0,
+          "outcome": "over",
+          "opponent_id": "AAA",
+          "source": "nhl_web",
+          "source_observed_at": "2026-06-20T12:00:00+00:00"
+        },
+        {
+          "game_id": "nhl_web:2025020001-invented-1",
+          "game_date": "2025-10-09",
+          "value": 2.0,
+          "outcome": "push",
+          "opponent_id": "AAA",
+          "source": "nhl_web",
+          "source_observed_at": "2026-06-20T12:00:00+00:00"
+        },
+        {
+          "game_id": "nhl_web:2025020001-invented-2",
+          "game_date": "2025-10-08",
+          "value": 1.0,
+          "outcome": "under",
+          "opponent_id": "AAA",
+          "source": "nhl_web",
+          "source_observed_at": "2026-06-20T12:00:00+00:00"
+        },
+        {
+          "game_id": "nhl_web:2025020001-invented-3",
+          "game_date": "2025-10-07",
+          "value": null,
+          "outcome": "missing",
+          "opponent_id": "AAA",
+          "source": "nhl_web",
+          "source_observed_at": "2026-06-20T12:00:00+00:00"
+        }
+      ],
+      "opponents": [
+        {
+          "opponent_id": "AAA",
+          "source": "nhl_web",
+          "games": [
+            {
+              "game_id": "nhl_web:2025020001-invented-0",
+              "game_date": "2025-10-10",
+              "value": 3.0,
+              "outcome": "over",
+              "opponent_id": "AAA",
+              "source": "nhl_web",
+              "source_observed_at": "2026-06-20T12:00:00+00:00"
+            },
+            {
+              "game_id": "nhl_web:2025020001-invented-1",
+              "game_date": "2025-10-09",
+              "value": 2.0,
+              "outcome": "push",
+              "opponent_id": "AAA",
+              "source": "nhl_web",
+              "source_observed_at": "2026-06-20T12:00:00+00:00"
+            },
+            {
+              "game_id": "nhl_web:2025020001-invented-2",
+              "game_date": "2025-10-08",
+              "value": 1.0,
+              "outcome": "under",
+              "opponent_id": "AAA",
+              "source": "nhl_web",
+              "source_observed_at": "2026-06-20T12:00:00+00:00"
+            },
+            {
+              "game_id": "nhl_web:2025020001-invented-3",
+              "game_date": "2025-10-07",
+              "value": null,
+              "outcome": "missing",
+              "opponent_id": "AAA",
+              "source": "nhl_web",
+              "source_observed_at": "2026-06-20T12:00:00+00:00"
+            }
+          ],
+          "l5": {
+            "appearances": 4,
+            "valid_samples": 3,
+            "missing_samples": 1,
+            "over_hits": 1,
+            "under_hits": 1,
+            "pushes": 1,
+            "hits": 1,
+            "losses": 1,
+            "raw_hit_rate": 0.3333333333333333,
+            "settled_decisions": 2,
+            "settled_hit_rate": 0.5
+          },
+          "l10": {
+            "appearances": 4,
+            "valid_samples": 3,
+            "missing_samples": 1,
+            "over_hits": 1,
+            "under_hits": 1,
+            "pushes": 1,
+            "hits": 1,
+            "losses": 1,
+            "raw_hit_rate": 0.3333333333333333,
+            "settled_decisions": 2,
+            "settled_hit_rate": 0.5
+          },
+          "season_window": {
+            "appearances": 4,
+            "valid_samples": 3,
+            "missing_samples": 1,
+            "over_hits": 1,
+            "under_hits": 1,
+            "pushes": 1,
+            "hits": 1,
+            "losses": 1,
+            "raw_hit_rate": 0.3333333333333333,
+            "settled_decisions": 2,
+            "settled_hit_rate": 0.5
+          }
+        }
+      ],
+      "current_opponent_id": null,
+      "limitations": [
+        "Recorded coverage may be incomplete. Descriptive hit rates are not future probabilities.",
+        "L5/L10 select appearances before excluding missing metrics; pushes are never wins.",
+        "Raw hit rate uses all valid outcomes; settled rate explicitly excludes pushes.",
+        "Invented offline fixture; not real sports coverage."
+      ],
+      "l5": {
+        "appearances": 4,
+        "valid_samples": 3,
+        "missing_samples": 1,
+        "over_hits": 1,
+        "under_hits": 1,
+        "pushes": 1,
+        "hits": 1,
+        "losses": 1,
+        "raw_hit_rate": 0.3333333333333333,
+        "settled_decisions": 2,
+        "settled_hit_rate": 0.5
+      },
+      "l10": {
+        "appearances": 4,
+        "valid_samples": 3,
+        "missing_samples": 1,
+        "over_hits": 1,
+        "under_hits": 1,
+        "pushes": 1,
+        "hits": 1,
+        "losses": 1,
+        "raw_hit_rate": 0.3333333333333333,
+        "settled_decisions": 2,
+        "settled_hit_rate": 0.5
+      },
+      "season_window": {
+        "appearances": 4,
+        "valid_samples": 3,
+        "missing_samples": 1,
+        "over_hits": 1,
+        "under_hits": 1,
+        "pushes": 1,
+        "hits": 1,
+        "losses": 1,
+        "raw_hit_rate": 0.3333333333333333,
+        "settled_decisions": 2,
+        "settled_hit_rate": 0.5
+      },
+      "status": "available",
+      "selection": {
+        "sportsbook": "FanDuel",
+        "line": 2,
+        "side": "over",
+        "actionable": false,
+        "availability": "expired",
+        "odds": null,
+        "provider_observed_at": "2026-10-20T00:00:00Z"
+      },
+      "offer_options": [
+        {
+          "sportsbook": "FanDuel",
+          "line": 2
+        },
+        {
+          "sportsbook": "DraftKings",
+          "line": 2.5
+        }
+      ]
+    }
+  },
+  {
+    "sport": "NFL",
+    "role": null,
+    "exact": {
+      "player_id": "11111111-1111-4111-8111-111111111111",
+      "sport": "NFL",
+      "market": "pass_yds",
+      "metrics": [
+        "pass_yds"
+      ],
+      "line": 2,
+      "side": "over",
+      "season": "2025",
+      "competition": "Regular Season",
+      "source": "nflverse",
+      "coverage": {
+        "state": "historical_season",
+        "completeness": "unknown",
+        "season_scope": "historical",
+        "season": "2025",
+        "competition": "Regular Season",
+        "source": "nflverse",
+        "last_game_date": "2025-09-07",
+        "source_observed_at": "2026-06-20T12:00:00+00:00",
+        "recorded_appearances": 4,
+        "l5_samples": 4,
+        "l10_samples": 4,
+        "recorded_weeks": [],
+        "limitations": [
+          "Source completeness is unknown; a recent game does not prove complete coverage."
+        ]
+      },
+      "reference_at": "2026-10-21T18:00:00+00:00",
+      "last_game_date": "2025-09-07",
+      "source_observed_at": "2026-06-20T12:00:00+00:00",
+      "games": [
+        {
+          "game_id": "nflverse:2025_01_AAA_BBB-invented-0",
+          "game_date": "2025-09-07",
+          "value": 3.0,
+          "outcome": "over",
+          "opponent_id": "BBB",
+          "source": "nflverse",
+          "source_observed_at": "2026-06-20T12:00:00+00:00"
+        },
+        {
+          "game_id": "nflverse:2025_01_AAA_BBB-invented-1",
+          "game_date": "2025-09-06",
+          "value": 2.0,
+          "outcome": "push",
+          "opponent_id": "BBB",
+          "source": "nflverse",
+          "source_observed_at": "2026-06-20T12:00:00+00:00"
+        },
+        {
+          "game_id": "nflverse:2025_01_AAA_BBB-invented-2",
+          "game_date": "2025-09-05",
+          "value": 1.0,
+          "outcome": "under",
+          "opponent_id": "BBB",
+          "source": "nflverse",
+          "source_observed_at": "2026-06-20T12:00:00+00:00"
+        },
+        {
+          "game_id": "nflverse:2025_01_AAA_BBB-invented-3",
+          "game_date": "2025-09-04",
+          "value": null,
+          "outcome": "missing",
+          "opponent_id": "BBB",
+          "source": "nflverse",
+          "source_observed_at": "2026-06-20T12:00:00+00:00"
+        }
+      ],
+      "opponents": [
+        {
+          "opponent_id": "BBB",
+          "source": "nflverse",
+          "games": [
+            {
+              "game_id": "nflverse:2025_01_AAA_BBB-invented-0",
+              "game_date": "2025-09-07",
+              "value": 3.0,
+              "outcome": "over",
+              "opponent_id": "BBB",
+              "source": "nflverse",
+              "source_observed_at": "2026-06-20T12:00:00+00:00"
+            },
+            {
+              "game_id": "nflverse:2025_01_AAA_BBB-invented-1",
+              "game_date": "2025-09-06",
+              "value": 2.0,
+              "outcome": "push",
+              "opponent_id": "BBB",
+              "source": "nflverse",
+              "source_observed_at": "2026-06-20T12:00:00+00:00"
+            },
+            {
+              "game_id": "nflverse:2025_01_AAA_BBB-invented-2",
+              "game_date": "2025-09-05",
+              "value": 1.0,
+              "outcome": "under",
+              "opponent_id": "BBB",
+              "source": "nflverse",
+              "source_observed_at": "2026-06-20T12:00:00+00:00"
+            },
+            {
+              "game_id": "nflverse:2025_01_AAA_BBB-invented-3",
+              "game_date": "2025-09-04",
+              "value": null,
+              "outcome": "missing",
+              "opponent_id": "BBB",
+              "source": "nflverse",
+              "source_observed_at": "2026-06-20T12:00:00+00:00"
+            }
+          ],
+          "l5": {
+            "appearances": 4,
+            "valid_samples": 3,
+            "missing_samples": 1,
+            "over_hits": 1,
+            "under_hits": 1,
+            "pushes": 1,
+            "hits": 1,
+            "losses": 1,
+            "raw_hit_rate": 0.3333333333333333,
+            "settled_decisions": 2,
+            "settled_hit_rate": 0.5
+          },
+          "l10": {
+            "appearances": 4,
+            "valid_samples": 3,
+            "missing_samples": 1,
+            "over_hits": 1,
+            "under_hits": 1,
+            "pushes": 1,
+            "hits": 1,
+            "losses": 1,
+            "raw_hit_rate": 0.3333333333333333,
+            "settled_decisions": 2,
+            "settled_hit_rate": 0.5
+          },
+          "season_window": {
+            "appearances": 4,
+            "valid_samples": 3,
+            "missing_samples": 1,
+            "over_hits": 1,
+            "under_hits": 1,
+            "pushes": 1,
+            "hits": 1,
+            "losses": 1,
+            "raw_hit_rate": 0.3333333333333333,
+            "settled_decisions": 2,
+            "settled_hit_rate": 0.5
+          }
+        }
+      ],
+      "current_opponent_id": null,
+      "limitations": [
+        "Recorded coverage may be incomplete. Descriptive hit rates are not future probabilities.",
+        "L5/L10 select appearances before excluding missing metrics; pushes are never wins.",
+        "Raw hit rate uses all valid outcomes; settled rate explicitly excludes pushes.",
+        "Invented offline fixture; not real sports coverage."
+      ],
+      "l5": {
+        "appearances": 4,
+        "valid_samples": 3,
+        "missing_samples": 1,
+        "over_hits": 1,
+        "under_hits": 1,
+        "pushes": 1,
+        "hits": 1,
+        "losses": 1,
+        "raw_hit_rate": 0.3333333333333333,
+        "settled_decisions": 2,
+        "settled_hit_rate": 0.5
+      },
+      "l10": {
+        "appearances": 4,
+        "valid_samples": 3,
+        "missing_samples": 1,
+        "over_hits": 1,
+        "under_hits": 1,
+        "pushes": 1,
+        "hits": 1,
+        "losses": 1,
+        "raw_hit_rate": 0.3333333333333333,
+        "settled_decisions": 2,
+        "settled_hit_rate": 0.5
+      },
+      "season_window": {
+        "appearances": 4,
+        "valid_samples": 3,
+        "missing_samples": 1,
+        "over_hits": 1,
+        "under_hits": 1,
+        "pushes": 1,
+        "hits": 1,
+        "losses": 1,
+        "raw_hit_rate": 0.3333333333333333,
+        "settled_decisions": 2,
+        "settled_hit_rate": 0.5
+      },
+      "status": "available",
+      "selection": {
+        "sportsbook": "FanDuel",
+        "line": 2,
+        "side": "over",
+        "actionable": false,
+        "availability": "expired",
+        "odds": null,
+        "provider_observed_at": "2026-10-20T00:00:00Z"
+      },
+      "offer_options": [
+        {
+          "sportsbook": "FanDuel",
+          "line": 2
+        },
+        {
+          "sportsbook": "DraftKings",
+          "line": 2.5
+        }
+      ]
+    }
+  },
+  {
+    "sport": "MLB",
+    "role": "batter",
+    "exact": {
+      "player_id": "11111111-1111-4111-8111-111111111111",
+      "sport": "MLB",
+      "market": "hits",
+      "metrics": [
+        "hits"
+      ],
+      "line": 2,
+      "side": "over",
+      "season": "2025",
+      "competition": "Regular Season",
+      "source": "mlb_stats_api",
+      "coverage": {
+        "state": "historical_season",
+        "completeness": "unknown",
+        "season_scope": "historical",
+        "season": "2025",
+        "competition": "Regular Season",
+        "source": "mlb_stats_api",
+        "last_game_date": "2025-06-10",
+        "source_observed_at": "2026-06-20T12:00:00+00:00",
+        "recorded_appearances": 4,
+        "l5_samples": 4,
+        "l10_samples": 4,
+        "recorded_weeks": [],
+        "limitations": [
+          "Source completeness is unknown; a recent game does not prove complete coverage."
+        ]
+      },
+      "reference_at": "2026-10-21T18:00:00+00:00",
+      "last_game_date": "2025-06-10",
+      "source_observed_at": "2026-06-20T12:00:00+00:00",
+      "games": [
+        {
+          "game_id": "mlb_stats_api:1234-invented-0",
+          "game_date": "2025-06-10",
+          "value": 3.0,
+          "outcome": "over",
+          "opponent_id": "2",
+          "source": "mlb_stats_api",
+          "source_observed_at": "2026-06-20T12:00:00+00:00"
+        },
+        {
+          "game_id": "mlb_stats_api:1234-invented-1",
+          "game_date": "2025-06-09",
+          "value": 2.0,
+          "outcome": "push",
+          "opponent_id": "2",
+          "source": "mlb_stats_api",
+          "source_observed_at": "2026-06-20T12:00:00+00:00"
+        },
+        {
+          "game_id": "mlb_stats_api:1234-invented-2",
+          "game_date": "2025-06-08",
+          "value": 1.0,
+          "outcome": "under",
+          "opponent_id": "2",
+          "source": "mlb_stats_api",
+          "source_observed_at": "2026-06-20T12:00:00+00:00"
+        },
+        {
+          "game_id": "mlb_stats_api:1234-invented-3",
+          "game_date": "2025-06-07",
+          "value": null,
+          "outcome": "missing",
+          "opponent_id": "2",
+          "source": "mlb_stats_api",
+          "source_observed_at": "2026-06-20T12:00:00+00:00"
+        }
+      ],
+      "opponents": [
+        {
+          "opponent_id": "2",
+          "source": "mlb_stats_api",
+          "games": [
+            {
+              "game_id": "mlb_stats_api:1234-invented-0",
+              "game_date": "2025-06-10",
+              "value": 3.0,
+              "outcome": "over",
+              "opponent_id": "2",
+              "source": "mlb_stats_api",
+              "source_observed_at": "2026-06-20T12:00:00+00:00"
+            },
+            {
+              "game_id": "mlb_stats_api:1234-invented-1",
+              "game_date": "2025-06-09",
+              "value": 2.0,
+              "outcome": "push",
+              "opponent_id": "2",
+              "source": "mlb_stats_api",
+              "source_observed_at": "2026-06-20T12:00:00+00:00"
+            },
+            {
+              "game_id": "mlb_stats_api:1234-invented-2",
+              "game_date": "2025-06-08",
+              "value": 1.0,
+              "outcome": "under",
+              "opponent_id": "2",
+              "source": "mlb_stats_api",
+              "source_observed_at": "2026-06-20T12:00:00+00:00"
+            },
+            {
+              "game_id": "mlb_stats_api:1234-invented-3",
+              "game_date": "2025-06-07",
+              "value": null,
+              "outcome": "missing",
+              "opponent_id": "2",
+              "source": "mlb_stats_api",
+              "source_observed_at": "2026-06-20T12:00:00+00:00"
+            }
+          ],
+          "l5": {
+            "appearances": 4,
+            "valid_samples": 3,
+            "missing_samples": 1,
+            "over_hits": 1,
+            "under_hits": 1,
+            "pushes": 1,
+            "hits": 1,
+            "losses": 1,
+            "raw_hit_rate": 0.3333333333333333,
+            "settled_decisions": 2,
+            "settled_hit_rate": 0.5
+          },
+          "l10": {
+            "appearances": 4,
+            "valid_samples": 3,
+            "missing_samples": 1,
+            "over_hits": 1,
+            "under_hits": 1,
+            "pushes": 1,
+            "hits": 1,
+            "losses": 1,
+            "raw_hit_rate": 0.3333333333333333,
+            "settled_decisions": 2,
+            "settled_hit_rate": 0.5
+          },
+          "season_window": {
+            "appearances": 4,
+            "valid_samples": 3,
+            "missing_samples": 1,
+            "over_hits": 1,
+            "under_hits": 1,
+            "pushes": 1,
+            "hits": 1,
+            "losses": 1,
+            "raw_hit_rate": 0.3333333333333333,
+            "settled_decisions": 2,
+            "settled_hit_rate": 0.5
+          }
+        }
+      ],
+      "current_opponent_id": null,
+      "limitations": [
+        "Recorded coverage may be incomplete. Descriptive hit rates are not future probabilities.",
+        "L5/L10 select appearances before excluding missing metrics; pushes are never wins.",
+        "Raw hit rate uses all valid outcomes; settled rate explicitly excludes pushes.",
+        "Invented offline fixture; not real sports coverage."
+      ],
+      "l5": {
+        "appearances": 4,
+        "valid_samples": 3,
+        "missing_samples": 1,
+        "over_hits": 1,
+        "under_hits": 1,
+        "pushes": 1,
+        "hits": 1,
+        "losses": 1,
+        "raw_hit_rate": 0.3333333333333333,
+        "settled_decisions": 2,
+        "settled_hit_rate": 0.5
+      },
+      "l10": {
+        "appearances": 4,
+        "valid_samples": 3,
+        "missing_samples": 1,
+        "over_hits": 1,
+        "under_hits": 1,
+        "pushes": 1,
+        "hits": 1,
+        "losses": 1,
+        "raw_hit_rate": 0.3333333333333333,
+        "settled_decisions": 2,
+        "settled_hit_rate": 0.5
+      },
+      "season_window": {
+        "appearances": 4,
+        "valid_samples": 3,
+        "missing_samples": 1,
+        "over_hits": 1,
+        "under_hits": 1,
+        "pushes": 1,
+        "hits": 1,
+        "losses": 1,
+        "raw_hit_rate": 0.3333333333333333,
+        "settled_decisions": 2,
+        "settled_hit_rate": 0.5
+      },
+      "status": "available",
+      "selection": {
+        "sportsbook": "FanDuel",
+        "line": 2,
+        "side": "over",
+        "actionable": false,
+        "availability": "expired",
+        "odds": null,
+        "provider_observed_at": "2026-10-20T00:00:00Z"
+      },
+      "offer_options": [
+        {
+          "sportsbook": "FanDuel",
+          "line": 2
+        },
+        {
+          "sportsbook": "DraftKings",
+          "line": 2.5
+        }
+      ]
+    }
+  },
+  {
+    "sport": "MLB",
+    "role": "pitcher",
+    "exact": {
+      "player_id": "11111111-1111-4111-8111-111111111111",
+      "sport": "MLB",
+      "market": "outs_recorded",
+      "metrics": [
+        "outs_recorded"
+      ],
+      "line": 2,
+      "side": "over",
+      "season": "2025",
+      "competition": "Regular Season",
+      "source": "mlb_stats_api",
+      "coverage": {
+        "state": "historical_season",
+        "completeness": "unknown",
+        "season_scope": "historical",
+        "season": "2025",
+        "competition": "Regular Season",
+        "source": "mlb_stats_api",
+        "last_game_date": "2025-06-10",
+        "source_observed_at": "2026-06-20T12:00:00+00:00",
+        "recorded_appearances": 4,
+        "l5_samples": 4,
+        "l10_samples": 4,
+        "recorded_weeks": [],
+        "limitations": [
+          "Source completeness is unknown; a recent game does not prove complete coverage."
+        ]
+      },
+      "reference_at": "2026-10-21T18:00:00+00:00",
+      "last_game_date": "2025-06-10",
+      "source_observed_at": "2026-06-20T12:00:00+00:00",
+      "games": [
+        {
+          "game_id": "mlb_stats_api:1234-invented-0",
+          "game_date": "2025-06-10",
+          "value": 3.0,
+          "outcome": "over",
+          "opponent_id": "2",
+          "source": "mlb_stats_api",
+          "source_observed_at": "2026-06-20T12:00:00+00:00"
+        },
+        {
+          "game_id": "mlb_stats_api:1234-invented-1",
+          "game_date": "2025-06-09",
+          "value": 2.0,
+          "outcome": "push",
+          "opponent_id": "2",
+          "source": "mlb_stats_api",
+          "source_observed_at": "2026-06-20T12:00:00+00:00"
+        },
+        {
+          "game_id": "mlb_stats_api:1234-invented-2",
+          "game_date": "2025-06-08",
+          "value": 1.0,
+          "outcome": "under",
+          "opponent_id": "2",
+          "source": "mlb_stats_api",
+          "source_observed_at": "2026-06-20T12:00:00+00:00"
+        },
+        {
+          "game_id": "mlb_stats_api:1234-invented-3",
+          "game_date": "2025-06-07",
+          "value": null,
+          "outcome": "missing",
+          "opponent_id": "2",
+          "source": "mlb_stats_api",
+          "source_observed_at": "2026-06-20T12:00:00+00:00"
+        }
+      ],
+      "opponents": [
+        {
+          "opponent_id": "2",
+          "source": "mlb_stats_api",
+          "games": [
+            {
+              "game_id": "mlb_stats_api:1234-invented-0",
+              "game_date": "2025-06-10",
+              "value": 3.0,
+              "outcome": "over",
+              "opponent_id": "2",
+              "source": "mlb_stats_api",
+              "source_observed_at": "2026-06-20T12:00:00+00:00"
+            },
+            {
+              "game_id": "mlb_stats_api:1234-invented-1",
+              "game_date": "2025-06-09",
+              "value": 2.0,
+              "outcome": "push",
+              "opponent_id": "2",
+              "source": "mlb_stats_api",
+              "source_observed_at": "2026-06-20T12:00:00+00:00"
+            },
+            {
+              "game_id": "mlb_stats_api:1234-invented-2",
+              "game_date": "2025-06-08",
+              "value": 1.0,
+              "outcome": "under",
+              "opponent_id": "2",
+              "source": "mlb_stats_api",
+              "source_observed_at": "2026-06-20T12:00:00+00:00"
+            },
+            {
+              "game_id": "mlb_stats_api:1234-invented-3",
+              "game_date": "2025-06-07",
+              "value": null,
+              "outcome": "missing",
+              "opponent_id": "2",
+              "source": "mlb_stats_api",
+              "source_observed_at": "2026-06-20T12:00:00+00:00"
+            }
+          ],
+          "l5": {
+            "appearances": 4,
+            "valid_samples": 3,
+            "missing_samples": 1,
+            "over_hits": 1,
+            "under_hits": 1,
+            "pushes": 1,
+            "hits": 1,
+            "losses": 1,
+            "raw_hit_rate": 0.3333333333333333,
+            "settled_decisions": 2,
+            "settled_hit_rate": 0.5
+          },
+          "l10": {
+            "appearances": 4,
+            "valid_samples": 3,
+            "missing_samples": 1,
+            "over_hits": 1,
+            "under_hits": 1,
+            "pushes": 1,
+            "hits": 1,
+            "losses": 1,
+            "raw_hit_rate": 0.3333333333333333,
+            "settled_decisions": 2,
+            "settled_hit_rate": 0.5
+          },
+          "season_window": {
+            "appearances": 4,
+            "valid_samples": 3,
+            "missing_samples": 1,
+            "over_hits": 1,
+            "under_hits": 1,
+            "pushes": 1,
+            "hits": 1,
+            "losses": 1,
+            "raw_hit_rate": 0.3333333333333333,
+            "settled_decisions": 2,
+            "settled_hit_rate": 0.5
+          }
+        }
+      ],
+      "current_opponent_id": null,
+      "limitations": [
+        "Recorded coverage may be incomplete. Descriptive hit rates are not future probabilities.",
+        "L5/L10 select appearances before excluding missing metrics; pushes are never wins.",
+        "Raw hit rate uses all valid outcomes; settled rate explicitly excludes pushes.",
+        "Invented offline fixture; not real sports coverage."
+      ],
+      "l5": {
+        "appearances": 4,
+        "valid_samples": 3,
+        "missing_samples": 1,
+        "over_hits": 1,
+        "under_hits": 1,
+        "pushes": 1,
+        "hits": 1,
+        "losses": 1,
+        "raw_hit_rate": 0.3333333333333333,
+        "settled_decisions": 2,
+        "settled_hit_rate": 0.5
+      },
+      "l10": {
+        "appearances": 4,
+        "valid_samples": 3,
+        "missing_samples": 1,
+        "over_hits": 1,
+        "under_hits": 1,
+        "pushes": 1,
+        "hits": 1,
+        "losses": 1,
+        "raw_hit_rate": 0.3333333333333333,
+        "settled_decisions": 2,
+        "settled_hit_rate": 0.5
+      },
+      "season_window": {
+        "appearances": 4,
+        "valid_samples": 3,
+        "missing_samples": 1,
+        "over_hits": 1,
+        "under_hits": 1,
+        "pushes": 1,
+        "hits": 1,
+        "losses": 1,
+        "raw_hit_rate": 0.3333333333333333,
+        "settled_decisions": 2,
+        "settled_hit_rate": 0.5
+      },
+      "status": "available",
+      "selection": {
+        "sportsbook": "FanDuel",
+        "line": 2,
+        "side": "over",
+        "actionable": false,
+        "availability": "expired",
+        "odds": null,
+        "provider_observed_at": "2026-10-20T00:00:00Z"
+      },
+      "offer_options": [
+        {
+          "sportsbook": "FanDuel",
+          "line": 2
+        },
+        {
+          "sportsbook": "DraftKings",
+          "line": 2.5
+        }
+      ]
+    }
+  }
+]
