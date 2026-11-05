@@ -1,81 +1,94 @@
 # PropPulse
 
-PropPulse is a multi-sport player research workspace for **NBA, WNBA, NFL, NHL and MLB**. It connects recorded player performance with exact sportsbook lines so a researcher can inspect the evidence behind a selection, compare equivalent prices, and keep a personal research library and draft slip.
+**A full-stack research workspace for comparing player statistics with exact sportsbook lines.**
 
-This portfolio project demonstrates full-stack engineering with real, imperfect sports data. It is a research tool; it does not place bets or provide validated win probabilities. Supported sports do not imply complete or current provider coverage.
+PropPulse brings multi-sport game logs, sportsbook comparisons and saved research into one workflow. Users can inspect a player's recorded performance, compare equivalent offers, and build an editable research slip without losing their choices when prices expire.
 
-## Explore the application
+**Next.js · React · TypeScript · Python · FastAPI · PostgreSQL · SQLAlchemy / Alembic · Docker**
 
-- **Discover:** server-side player/team search, sport/market/book/side filters, sorting and pagination with shareable URL state.
-- **Player Research:** sport-specific recorded L5/L10 summaries, season selection, exact-line hit rates, charts and source coverage, including research without a current offer.
-- **Sportsbook comparison:** Over/Under prices grouped by the same player, market, event and line. Alternative lines remain separate.
-- **Saved Props:** generic bookmarks and exact sportsbook/line/side selections with original price observations.
-- **Research slips:** edit selections in place, preserve unavailable picks, reload persisted choices, and view explicitly experimental payout/correlation estimates.
-- **Account preferences and My Players:** authenticated preferences, saved research and followed players. Public research can be browsed without signing in.
-- **Responsive workspace:** desktop and mobile navigation, charts, accessible form labels, keyboard focus and recoverable loading/error states.
+Built as a software engineering portfolio project, with particular attention to data correctness, API integration and secure account persistence. It does not place bets or provide validated win probabilities. **Public deployment is not approved; no hosted demo is currently advertised.**
 
-## Engineering highlights
+[Screenshots](#screenshots) · [Features](#features) · [Architecture](#architecture) · [Engineering decisions](#engineering-decisions) · [Local setup](#local-setup-windows-powershell) · [Testing and security](#testing-and-security)
 
-Multi-source ingestion normalizes provider identities, competitions, game dates and sport-specific metrics into PostgreSQL relational models. Reviewed player mappings and event identity checks prevent ambiguous matches. Transactional imports, idempotency guards and Alembic migrations protect historical records and user selections. Refresh tools enforce bounded requests, quota reserves and explicit execution scopes.
+## Screenshots
 
-Odds freshness is enforced on the server using provider observation time, never a newly generated response timestamp. Exact-line research retains pushes and valid sample denominators rather than presenting missing games as losses. Server-side search and pagination use retained eligible inventory. Automated backend, frontend and browser tests cover identity, freshness, ingestion failures, authorization and persistence.
+Actual browser captures of the running application using **invented offline fixtures**, including prices and account state. “Live odds” is a simulated UI state here, not a claim of current market data. No provider requests or application database records were used. Click an image for full resolution.
 
-The workload indices and Discover rankings are heuristics. The experimental NBA XGBoost/SHAP code is a legacy experiment, not a validated prediction product or a required setup step.
+**Discover dashboard** — search, sport and sportsbook filters, pagination, and player-prop cards with separate price/statistics freshness.
 
-## Stack and architecture
+[![PropPulse Discover dashboard with sport filters and synthetic player-prop cards](docs/images/discover-dashboard.png)](docs/images/discover-dashboard.png)
 
-| Layer | Implementation |
-| --- | --- |
-| Frontend | Next.js 15 App Router, React 19, TypeScript, Tailwind CSS, Recharts, Zustand, Lucide |
-| API | FastAPI, Pydantic, SQLAlchemy, Python |
-| Persistence | PostgreSQL; versioned Alembic migrations |
-| Authentication | bcrypt password hashes, expiring HS256 JWTs in HttpOnly cookies with CSRF protection |
-| Verification | unittest, isolated SQLite/PostgreSQL fixtures, Node test runner, Playwright |
-| Optional infrastructure | Redis is configured but not used by application caching |
+<details>
+<summary>Exact-line research and sportsbook comparison</summary>
 
-Next.js calls FastAPI, which reads PostgreSQL. Separate ingestion commands collect The Odds API sportsbook markets and real statistics from NBA.com, wehoop, nflverse, NHL Web API, MLB StatsAPI and legacy ESPN paths. The API does not fetch provider data on ordinary research requests. See [architecture and data contracts](docs/architecture.md).
+Compare two sportsbooks at the same line, inspect L5/L10 sample denominators, and see recorded outcomes against the line on a chart. All values are synthetic.
 
-## Data reliability and limitations
+[![Exact-line research showing FanDuel and BetMGM prices, sample summaries, and an Over/Under/Push results chart using invented data](docs/images/exact-line-research.png)](docs/images/exact-line-research.png)
 
-Prices are current/actionable for 30 minutes after provider observation. From 30 minutes through six hours they are labeled last-known and are not actionable. After six hours, at game start, or without trustworthy observation/identity/price, the offer is unavailable. Stored selections keep their original book, line and side when pricing disappears. Historical snapshots are observations, not verified continuous sportsbook movement.
+</details>
 
-Known retained-data limitations:
+<details>
+<summary>Saved selections and research-slip editing</summary>
 
-- NBA 2026–27 provider access has not been verified successfully; historical NBA.com records are retained.
-- WNBA retained player records end **July 22, 2026**.
-- NFL coverage is limited to the retained dataset; missing appearances do not establish DNP or complete weekly coverage.
-- MLB legacy exclusions remain, including unreviewed legacy overlaps/season metadata; they are not silently certified as complete current-season statistics.
-- The **Liam Hicks identity conflict** remains excluded pending reliable resolution.
-- Source completeness is unknown; recorded L5/L10 means recorded appearances, not a certified complete schedule.
-- Historical sportsbook movement is unverified. Development sportsbook prices may be expired and must not be described as live.
+An exact saved choice retains its original price while the slip editor previews a different sportsbook, side and line before saving. Account and saved state are browser fixtures, not a real account or proof of database persistence.
 
-No benchmarks, active-user counts, model accuracy or public deployment are claimed. See [multi-sport source notes](docs/phase-8-multi-sport.md) and the [bounded unified refresh guide](docs/phase-9-unified-refresh.md). Provider calls/imports require separately approved scopes; they are not part of setup or the demo.
+[![Saved synthetic NHL selection beside an open research-slip editor previewing an Under 3.5 DraftKings choice with Save changes and Cancel controls](docs/images/saved-selections-slip.png)](docs/images/saved-selections-slip.png)
+
+</details>
+
+## Features
+
+- **Multi-sport research:** NBA, WNBA, NFL, NHL and MLB player statistics, recorded game logs, season selection and L5/L10 summaries. Coverage varies by sport and source.
+- **Exact-line analysis:** compare recorded results against a selected line and side, with explicit hits, misses, pushes and valid sample sizes.
+- **Sportsbook comparisons:** compare prices for the same player, market, event and line; display alternative lines separately.
+- **Discover:** server-side search, filters, sorting and pagination with shareable URL state.
+- **Saved research:** save bookmarks or exact sportsbook/line/side selections, edit research slips, and restore account state across sessions.
+- **Honest availability:** show source coverage, expired prices and missing data; preserve saved choices when their offers become unavailable. Desktop and mobile layouts support the same workflow.
+
+For a walkthrough, see the [3-5 minute demo script and offline replay](docs/portfolio-demo.md). The replay uses clearly labeled **invented fixtures**, not live odds. A new checkout contains no private provider dataset or user accounts; it starts with empty research data.
+
+## Architecture
+
+```mermaid
+flowchart LR
+  Browser["Desktop / mobile browser"] --> Web["Next.js / React / TypeScript"]
+  Web -->|"REST JSON, cookies and CSRF proof"| API["FastAPI / SQLAlchemy"]
+  API --> DB[(PostgreSQL)]
+  Providers["Sportsbook and statistics providers"] --> Import["Separately authorized collection / normalization"]
+  Import -->|"Transactional imports"| DB
+```
+
+The frontend calls a REST API for public research and authenticated account operations. PostgreSQL stores players, events, game logs, offer observations, users and saved selections. Alembic manages schema changes. Provider collection is a separate workflow; ordinary research requests do not call sports providers.
+
+The UI uses Tailwind CSS, Recharts and Zustand. Backend imports normalize source identities and sport-specific metrics before persistence. The backend runtime uses a non-root, multistage Docker image. Redis is configured locally but is not used for application caching. See [architecture and data contracts](docs/architecture.md) for details.
+
+## Engineering decisions
+
+1. **Compare equivalent offers.** Player, market, event, exact line and side define a price comparison. Pushes and missing statistics have explicit treatment in research denominators, preventing misleading comparisons across lines or incomplete samples.
+2. **Keep identity and freshness intact.** Provider mappings and event checks reject ambiguous matches. Transactional, repeatable imports protect retained data. Availability uses provider observation time; an API response cannot make old odds fresh, and expired offers never silently replace a saved selection.
+3. **Enforce account boundaries on the server.** bcrypt password hashes and expiring JWTs in HttpOnly cookies support authentication. CSRF proofs, trusted origins and user-scoped database queries protect mutations and ownership. The frontend sends credentialed requests without persisting authentication JWTs in localStorage.
+
+Scores and workload indices are heuristics. The legacy XGBoost/SHAP experiment is optional and is not a validated prediction system or part of normal setup.
 
 ## Local setup (Windows PowerShell)
 
-Prerequisites: Node.js **24.22.1 or later within major 24** (the tested development runtime; this public snapshot does not include a machine-specific Node version pin), Python 3.11 or later with compatible wheels, Docker Desktop, Git. Run from the repository root. Do not overwrite an existing environment file.
+Use **Node.js 24** (tested with 24.22.1), **Python 3.11** (the Docker runtime), Docker Desktop and Git. Run from the repository root. These instructions are for a **new local checkout**; do not overwrite existing environments or migrate an existing database without a reviewed backup.
 
 ```powershell
-# New checkout only; these files are ignored.
 Copy-Item .env.example backend/.env
 Copy-Item .env.example .env
-python -m venv backend/venv
+py -3.11 -m venv backend/venv
 backend/venv/Scripts/python.exe -m pip install -r backend/requirements.txt
 Push-Location frontend
 npm ci
 Pop-Location
+Set-Content frontend/.env.local 'NEXT_PUBLIC_API_URL=http://localhost:8000'
 docker compose up -d db redis
 ```
 
-The example backend URL uses `localhost:5432/proppulse` for the normal local backend. Compose overrides the backend service's host to `db`. The frontend needs its own public API setting:
+Generate a private key with `backend/venv/Scripts/python.exe -c "import secrets; print(secrets.token_urlsafe(48))"` and set `JWT_SECRET` in `backend/.env`. Keep provider keys empty and `LIVE_REFRESH_ENABLED=false`. Settings read the backend environment relative to the backend working directory; root `.env` supplies Compose settings. Python requirements use the committed constraints lock; npm uses `package-lock.json`.
 
-```powershell
-Set-Content frontend/.env.local 'NEXT_PUBLIC_API_URL=http://localhost:8000'
-```
-
-Generate a private signing secret with Python's `secrets.token_urlsafe(48)` and put it in `backend/.env`; never publish it. Keep `LIVE_REFRESH_ENABLED=false` and provider keys empty for retained-data research. Settings read `.env` relative to the backend working directory; root `.env` is for Compose. [Deployment/environment guidance](docs/milestone-3h-staging-recovery.md#current-deployment-guide) lists required and optional settings.
-
-**New, empty local database only:** after deliberately selecting the database, initialize the schema:
+For the **new, empty local database only**, initialize the schema:
 
 ```powershell
 Push-Location backend
@@ -83,33 +96,26 @@ Push-Location backend
 Pop-Location
 ```
 
-An existing database requires a reviewed backup and explicit migration approval. Current head is `20261022_05`; startup never migrates or seeds. See [migration instructions](backend/alembic/README.md). An empty checkout contains no private provider dataset or user accounts. Do not run legacy seed/refresh/ML tools to populate the research database.
+Current migration head is `20261022_05`. Startup does not migrate or seed the database. See [migration instructions](backend/alembic/README.md); provider collection is optional, separately configured work and is not required to start the app.
 
-Start in separate terminals:
+Start the API and frontend in separate terminals, each from the repository root:
 
 ```powershell
-# Root, if local services are not already running:
-docker compose up -d db redis
-# Terminal 2:
+# Terminal 1
 cd backend
 .\venv\Scripts\python.exe -m uvicorn app.main:app --reload --port 8000
-# Terminal 3 (from repository root):
+# Terminal 2
 cd frontend
 npm run dev
 ```
 
-Open [PropPulse](http://localhost:3000), [API liveness](http://localhost:8000/health), [database readiness](http://localhost:8000/ready) and [API contracts](http://localhost:8000/docs). Health alone does not prove database readiness. Stop app terminals with Ctrl+C; `docker compose down` stops services without removing data volumes.
+Open the [frontend](http://localhost:3000) and [API documentation](http://localhost:8000/docs). `/health` checks liveness; `/ready` checks database readiness. Stop app terminals with Ctrl+C. `docker compose down` stops local services without deleting volumes. Use the [offline replay](docs/portfolio-demo.md#reproducible-offline-replay-and-reset) to explore populated interaction scenarios without provider calls or private data; do not use legacy seed/refresh tools to populate the research database.
 
-## Portfolio demonstration
+## Testing and security
 
-Follow the [3–5 minute demo script and offline replay](docs/portfolio-demo.md). Show retained real statistics read-only, explain unavailable/expired offers, then explicitly switch to **invented offline fixtures** for reproducible available-price, authentication-state and editing scenarios. Fixtures neither call providers nor mutate the development database. No shared demo credentials are advertised. Existing accounts are environment-specific; account creation and persistence demonstrations must use isolated fixtures or an explicitly authorized separate database.
+The repository includes backend unit tests, frontend tests, Playwright desktop/mobile scenarios, ownership and CSRF tests, and disposable PostgreSQL integration/restore checks. Local production-like verification exercised HTTPS cookies, gateway limits, least-privilege database roles and a read-only, non-root container runtime. These checks demonstrate local behavior, not a verified cloud deployment.
 
-## Verification
-
-Historical milestone reports describe the original private development environment. Provider collections, database backups, local player mappings, approval records, raw security scans and generated screenshots are deliberately excluded from this source snapshot. Paths to those artifacts are provenance notes or input/output examples, not downloadable public fixtures. Reproduce checks with the committed invented fixtures and newly created disposable resources; optional provider workflows require separately prepared, reviewed inputs and credentials.
-
-
-From `backend`, use the HTTP-blocking runner (no application lifespan):
+From `backend`, run the HTTP-blocking test runner:
 
 ```powershell
 $env:DATABASE_URL='sqlite:///:memory:'
@@ -117,7 +123,7 @@ $env:LIVE_REFRESH_ENABLED='false'
 .\venv\Scripts\python.exe tests/run_no_provider_http.py
 ```
 
-PostgreSQL cases require `PROPPULSE_TEST_POSTGRES_URL` pointing to an **isolated** `proppulse_test_...` database; they skip when unset. Never use the application database for tests. From `frontend`:
+PostgreSQL cases require an isolated `proppulse_test_...` database via `PROPPULSE_TEST_POSTGRES_URL`; they skip when unset. Never test against application data. From `frontend` (browser tests use installed Google Chrome by default):
 
 ```powershell
 npm test
@@ -127,8 +133,10 @@ npm run test:e2e
 npx playwright test --config playwright.mobile.config.cjs
 ```
 
-Browser suites use mocked HTTP for mutations; retained-data checks are separate. See the [Feature 10 verification report](docs/phase-9-feature-10-readiness.md) for actual results and checks not run. There is no configured lint script/gate. Do not confuse static rendering with browser or real PostgreSQL verification.
+Browser fixtures and real database tests cover different boundaries. Built-in process-local rate limits are a backstop; production requires coordinated gateway limits. Immediate server-side token revocation is not implemented; residual dependency/image advisories remain documented. See [authentication/API security](docs/security-stage2-auth-api.md), [container remediation](docs/container-image-remediation.md) and the [local release-verification matrix](docs/security-stage3-production-verification.md). Historical private scan files, backups, approval records and generated captures are excluded; public tests use committed invented fixtures and disposable resources.
 
-## Deployment
+## Data limits and deployment status
 
-Minimum: a maintained Next.js Node service, the reviewed FastAPI container, private PostgreSQL and a trusted HTTPS gateway with shared abuse limits. No hosting platform is selected. Redis and a refresh scheduler are unnecessary for retained-data research; keep refresh disabled. Costs include compute, database/storage/backups, network, domain and monitoring, with provider subscriptions separately authorized. See the [provider-independent deployment guide](docs/milestone-3h-staging-recovery.md#current-deployment-guide) and [Stage 3 release matrix](docs/security-stage3-production-verification.md). Local Linux/HTTPS/recovery checks passed; image findings and hosting/operations gates remain. Public deployment is unapproved.
+Sport support does not imply complete or current provider coverage. Recorded L5/L10 summaries describe available appearances; missing records do not prove a player did not play. Odds become unavailable as they age or an event starts, and stored observations do not establish complete historical line movement. No profitability, calibrated model accuracy or live coverage guarantee is claimed.
+
+Detailed sport-specific gaps and identity exclusions are in the [source notes](docs/phase-8-multi-sport.md) and [refresh guide](docs/phase-9-unified-refresh.md). A future deployment needs maintained frontend/backend services, private PostgreSQL, HTTPS, secrets, coordinated abuse limits and operational backups. **No hosting platform is selected and public deployment remains unapproved.** See the [provider-independent deployment guide](docs/milestone-3h-staging-recovery.md#current-deployment-guide) and [public snapshot review](PUBLICATION.md).
