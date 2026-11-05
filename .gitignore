@@ -87,3 +87,7 @@ recordings/
 .gitleaks*.json
 .trivy*
 backend/odds_ingestion_status.json
+
+# Local Cloudflare build/runtime state
+.open-next/
+.wrangler/
