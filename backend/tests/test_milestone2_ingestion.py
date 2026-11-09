@@ -166,6 +166,7 @@ class IsolatedPersistenceTests(unittest.TestCase):
         self.assertEqual(offer.provider_observed_at, OBSERVED)
         self.assertGreater(offer.ingested_at, offer.provider_observed_at)
         self.assertEqual(offer.provider_bookmaker_key, "fanduel")
+        self.assertEqual(self.apply(parsed())[1]["availability"], "live")
 
     def test_identical_repeat_has_no_duplicate_or_snapshot_churn(self):
         prop, offer = self.bootstrap()
@@ -182,6 +183,22 @@ class IsolatedPersistenceTests(unittest.TestCase):
         rows[0]["provider_observed_at"] = NOW - timedelta(hours=2)
         _, status = self.apply(rows)
         self.assertEqual(status["availability"], "last_known")
+        prop = self.db.query(Prop).one()
+        decision = ingestion.offer_availability(prop, "FanDuel", prop.line, "over", NOW)
+        self.assertFalse(decision["actionable"])
+        self.assertEqual(decision["source"], "last_known")
+        self.assertEqual(decision["odds"], -110)
+        self.assertEqual(status["cached_live_props"], 0)
+
+    def test_mixed_live_and_last_known_status_preserves_per_offer_actionability(self):
+        rows = parsed() + parsed(name="Second Test Player")
+        rows[1]["provider_observed_at"] = NOW - timedelta(hours=2)
+        _, status = self.apply(rows)
+        self.assertEqual(status["availability"], "last_known")
+        decisions = [ingestion.offer_availability(prop, "FanDuel", prop.line, "over", NOW)
+                     for prop in self.db.query(Prop).all()]
+        self.assertEqual(sorted(d["availability"] for d in decisions), ["available", "last_known"])
+        self.assertEqual(sum(d["actionable"] for d in decisions), 1)
 
     def test_successful_write_of_missing_observation_reports_unavailable(self):
         rows = parsed()

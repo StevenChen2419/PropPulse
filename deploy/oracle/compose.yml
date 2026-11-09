@@ -1,0 +1,171 @@
+name: proppulse-oracle
+
+x-runtime: &runtime
+  image: ${BACKEND_IMAGE:?Set a reviewed ARM64 backend image}
+  platform: linux/arm64
+  user: "10001:10001"
+  read_only: true
+  cap_drop: [ALL]
+  security_opt: [no-new-privileges:true]
+  pids_limit: 128
+  mem_limit: 1g
+  memswap_limit: 1g
+  cpus: 1.0
+  tmpfs: ["/tmp:rw,noexec,nosuid,nodev,size=64m,uid=10001,gid=10001"]
+  logging: &logs
+    driver: json-file
+    options: {max-size: "10m", max-file: "3"}
+  environment: &environment
+    ENVIRONMENT: production
+    PG_DATABASE: ${PG_DATABASE:-proppulse}
+    CORS_ORIGINS: ${CORS_ORIGINS:?Set an exact HTTPS frontend origin JSON list}
+    GATEWAY_RATE_LIMIT_ENABLED: "true"
+    LIVE_REFRESH_ENABLED: "false"
+    AUTH_COOKIE_SAMESITE: lax
+    OMP_NUM_THREADS: "2"
+    OPENBLAS_NUM_THREADS: "2"
+    PYTHONPATH: /app
+
+services:
+  # Explicit first-use job only. It refuses to touch a nonempty data directory.
+  volume-init:
+    profiles: [tools]
+    image: ${POSTGRES_IMAGE:?Set the reviewed UID70 PostgreSQL derivative}
+    platform: linux/arm64
+    user: "0:0"
+    network_mode: none
+    read_only: true
+    cap_drop: [ALL]
+    cap_add: [CHOWN]
+    security_opt: [no-new-privileges:true]
+    entrypoint: [sh, -eu, -c]
+    command: ['test -z "$$(ls -A /pgdata)"; chmod 700 /pgdata; chown 70:70 /pgdata']
+    volumes: [pgdata:/pgdata]
+    restart: "no"
+    mem_limit: 64m
+    cpus: 0.25
+    pids_limit: 32
+    logging: *logs
+
+  db:
+    image: ${POSTGRES_IMAGE:?Set the reviewed UID70 PostgreSQL derivative}
+    platform: linux/arm64
+    user: "70:70"
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    restart: unless-stopped
+    mem_limit: 1g
+    memswap_limit: 1g
+    cpus: 0.75
+    pids_limit: 200
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+      POSTGRES_PASSWORD_FILE: /run/secrets/db_admin_password
+      POSTGRES_INITDB_ARGS: --auth-host=scram-sha-256 --auth-local=trust
+    command: [postgres, -c, shared_buffers=128MB, -c, work_mem=4MB, -c, max_connections=40, -c, log_statement=none, -c, log_min_error_statement=panic]
+    secrets: [db_admin_password]
+    volumes: [pgdata:/var/lib/postgresql/data]
+    tmpfs:
+      - /var/run/postgresql:rw,noexec,nosuid,nodev,size=16m,uid=70,gid=70,mode=0770
+      - /tmp:rw,noexec,nosuid,nodev,size=64m,uid=70,gid=70
+    networks: [database]
+    healthcheck:
+      test: [CMD, pg_isready, -U, postgres, -d, postgres]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 20s
+    logging: *logs
+
+  bootstrap:
+    <<: *runtime
+    profiles: [tools]
+    restart: "no"
+    entrypoint: [python, /app/scripts/production_runtime.py, bootstrap]
+    secrets: [db_admin_password, db_owner_password, db_app_password]
+    networks: [database]
+    depends_on: {db: {condition: service_healthy}}
+
+  migrate:
+    <<: *runtime
+    profiles: [tools]
+    restart: "no"
+    entrypoint: [python, /app/scripts/production_runtime.py, migrate]
+    secrets:
+      - {source: migration_database_url, target: database_url}
+      - jwt_secret
+    networks: [database]
+    depends_on: {db: {condition: service_healthy}}
+
+  backend:
+    <<: *runtime
+    restart: unless-stopped
+    entrypoint: [python, /app/scripts/production_runtime.py, serve]
+    environment:
+      <<: *environment
+      TRUSTED_GATEWAY_IP: ${GATEWAY_IP:-10.78.0.2}
+    secrets:
+      - {source: app_database_url, target: database_url}
+      - jwt_secret
+    networks:
+      database: {}
+      api: {ipv4_address: "${BACKEND_IP:-10.78.0.3}"}
+    depends_on: {db: {condition: service_healthy}}
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/ready', timeout=4).read()"]
+      interval: 15s
+      timeout: 5s
+      retries: 4
+      start_period: 30s
+    # No bind mounts, provider keys, host ports or automatic migration/refresh.
+
+  gateway:
+    image: ${GATEWAY_IMAGE:?Set a reviewed ARM64 Nginx image digest}
+    platform: linux/arm64
+    user: "101:101"
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    restart: unless-stopped
+    entrypoint: [nginx, -g, "daemon off;"]
+    mem_limit: 128m
+    memswap_limit: 128m
+    cpus: 0.25
+    pids_limit: 64
+    ports: ["${GATEWAY_BIND:-127.0.0.1}:${GATEWAY_PORT:-443}:8443"]
+    tmpfs: ["/tmp:rw,noexec,nosuid,nodev,size=32m,uid=101,gid=101"]
+    volumes:
+      - ${NGINX_CONFIG_DIR:?Set an external reviewed gateway config directory}/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ${NGINX_CONFIG_DIR}/cloudflare.conf:/etc/nginx/cloudflare.conf:ro
+    secrets: [origin_cert, origin_key, cloudflare_client_ca]
+    networks:
+      edge: {}
+      api: {ipv4_address: "${GATEWAY_IP:-10.78.0.2}"}
+    depends_on: {backend: {condition: service_healthy}}
+    healthcheck:
+      test: [CMD, wget, -q, -O, /dev/null, "http://127.0.0.1:8080/health"]
+      interval: 15s
+      timeout: 3s
+      retries: 4
+    logging: *logs
+
+networks:
+  database: {internal: true}
+  api:
+    internal: true
+    ipam: {config: [{subnet: "${API_SUBNET:-10.78.0.0/24}"}]}
+  edge: {}
+volumes:
+  pgdata: {}
+secrets:
+  db_admin_password: {file: "${SECRETS_DIR:?Set an absolute private secrets directory}/db_admin_password"}
+  db_owner_password: {file: "${SECRETS_DIR}/db_owner_password"}
+  db_app_password: {file: "${SECRETS_DIR}/db_app_password"}
+  app_database_url: {file: "${SECRETS_DIR}/app_database_url"}
+  migration_database_url: {file: "${SECRETS_DIR}/migration_database_url"}
+  jwt_secret: {file: "${SECRETS_DIR}/jwt_secret"}
+  origin_cert: {file: "${SECRETS_DIR}/origin_cert.pem"}
+  origin_key: {file: "${SECRETS_DIR}/origin_key.pem"}
+  cloudflare_client_ca: {file: "${SECRETS_DIR}/cloudflare_client_ca.pem"}

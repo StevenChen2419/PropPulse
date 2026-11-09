@@ -1069,8 +1069,10 @@ def apply_updates_for_sport(
                                odds_event_id=prop.odds_event_id, book_offers=[offer])
         for side in ("over", "under"):
             decision = offer_availability(view, offer.sportsbook, offer.line, side, seen_at)
-            if decision["actionable"]:
+            # Retained observations inform status even when they cannot be acted on.
+            if decision["source"] in {"live", "last_known"}:
                 decisions.append(decision)
+            if decision["actionable"]:
                 eligible_ids.add(prop.id)
     cached_prop_ids &= eligible_ids
     cached_offers = [offer for offer in existing_offers if offer.prop_id in cached_prop_ids
